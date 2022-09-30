@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+#general {
+    width: 80vw;
+    height: 90vh;
+    /* background-color: blue; */
+    /* border: 1px solid black; */
+    margin: auto;
+}
+
+body{
+    background-image: url("oficina_fondo.jpg");
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1{
+    /* border: 1px solid black; */
+    padding: 2%;
+}
+
+p{
+    padding: 1%;
+}
+
+#formulario {
+    margin: auto;
+    text-align: center;
+    background-color: blanchedalmond;
+    border: 1px solid grey;
+    height:fit-content;
+    width: fit-content;
+    padding-bottom: 3%;
+}
+
+#boton{
+    border-radius: 15%;
+    background-color: lightblue;
+    font-weight: bold;
+    padding: 2%;
+    color: grey;
+
+}
+
+#boton:hover {
+    background-color: lightpink;
+    color: white;
+
+}
+
+p{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.campos {
+    background-color: white;
+}
+
+.campos:hover {
+    border-color: green;
+    background-color: grey;
+    color: white;
+}
