@@ -14,5 +14,7 @@
     echo $frutas[2];
 
 
-    //para 
+    for($i = 0; $i < count($frutas); $i++) {
+        echo $frutas[$i]."<br>";
+     }
 ?>
