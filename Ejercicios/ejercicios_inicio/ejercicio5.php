@@ -5,7 +5,6 @@
     $error = false;
     //$_GET consigue la información de la cabecera
     print_r($_GET);
-    //falta incluir las mejoras de introduccion usando input y post
     if (isset($_GET['radio'])) {
         $r = $_GET['radio'];
         if ($r =="") {
@@ -29,7 +28,7 @@
     <h1>Bienvenido a la calculadora <?=$nombre?></h1>
     <div>
         <?php if ($error) {?>
-            <h3>Eres un poco patoso. Mete un número</h3>
+            <h3>Debes introducir un número para que funcione</h3>
         <?php } ?>
         <form action="practica5.php" method="get">
             Radio: <input type="number" step="0.01" name="radio" id="" value="<?=$r?>"><br>

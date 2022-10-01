@@ -4,4 +4,5 @@ body > p{
 
 body > p > span {
     font-weight: bold;
+    font-style: italic;
 }

@@ -1,3 +1,5 @@
+<!-- Modifica la página para que escriba la parte "Esta página..." en cursiva y "" en cursiva y negrita. NOTA: Puedes utilizar el operador "." para concatenar cadenas. -->
+
 <?php
     //correcion hecha en clase
     $nombre=" Pepe";

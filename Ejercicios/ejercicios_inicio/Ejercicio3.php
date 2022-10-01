@@ -1,5 +1,6 @@
+<!-- Escriba después de "Hola Mundo!" "Esta página ha sido programada por " -->
 <?php
-    $retorno = "Hola Mundo ";
+    $retorno = "Hola Mundo! ";
 
     $complemento = "Esta página ha sido programada por ";
 
