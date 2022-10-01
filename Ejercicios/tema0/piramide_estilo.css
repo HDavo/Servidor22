@@ -1,0 +1,19 @@
+table, tr, td {
+    border-collapse: collapse;
+    border: 1px solid grey;
+}
+
+table {
+    text-align: center;
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+}
+
+tr, td {
+    padding: 2%;
+}
+
+.esPrimo {
+    background-color: beige;
+}
