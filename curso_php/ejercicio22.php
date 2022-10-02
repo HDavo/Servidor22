@@ -25,7 +25,9 @@
 
      foreach($frutas2 as $indice=>$valor) {
         // echo $indice."      ";
-
+      /* Funcionamiento del foreach: 
+         al recorrer el array se busca dentro de cada indice (no definido por defecto) 
+         el valor que contiene y se pueden imprimir tanto el valor como el contenido, ya que se accede a ambos.*/
         // echo $frutas2[$indice]."<br>";
 
         echo "El valor ".$valor." Tiene el índice: ".$indice."<br>";
