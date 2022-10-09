@@ -3,15 +3,28 @@
 Función: array_rand
 */
 
-$tareas = ["limpieza", "cocina", "baños","habitaciones"];
+$tareas = [
+    'Pelar mandarinas',
+    'Comer comida',
+    'Beber bebida',
+    'Recoger título',
+    'Cobrar salario',
+    'Barrer casa',
+    'Fregar casa',
+    // Añade más
+];
 
-$personas = ["pepe","manolo","paco","benancio"];
+$personas = [
+    "Pepe",
+    "Manolo",
+    "Paco",
+    "Benancio"];
 
 $personas_al = array_rand($personas,1);
 $tareas_al = array_rand($tareas,1);
 
-echo $personas[$personas_al] . "\n";
-echo $tareas[$tareas_al] . "\n";
+echo $personas[$personas_al] ." tiene que ". $tareas[$tareas_al];
+
 
 //desde aquí resolución del organigrama
 $semana = [
