@@ -19,7 +19,7 @@
     <title>Document</title>
 </head>
 <body>
-    Hola Mundo
+    
     <!-- este formulario se envia a la parte de php, mediante los inputs puesto -->
     <form action="ejercicio2.php" method="post">
         Nombre: 
@@ -28,6 +28,6 @@
         <input type="button" value="Enviar">
 
     </form>
-
+    Hola Mundo
 </body>
 </html>
