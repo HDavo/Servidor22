@@ -14,5 +14,11 @@
     print $cuenta2->impresion();
     print $cuenta3->impresion();
 
+    $cuenta2->ingreso(600);
 
+    $cuenta2->retirada(200);
+
+    $cuenta3->transferencia(2500, $cuenta2);
+
+    
 ?>
