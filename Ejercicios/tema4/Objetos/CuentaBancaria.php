@@ -63,7 +63,7 @@
 
             $numeroCuenta->ingreso($cantidadTransferida);
 
-            return "Se han transferido  $cantidadTransferida euros a la cuenta $cuentaDestino. <br> Su saldo disponible es de $saldo."
+            return "Se han transferido  $cantidadTransferida euros a la cuenta $cuentaDestino. <br> Su saldo disponible es de $saldo.";
         }
 
         public function fusion(int $cuenta){
@@ -71,7 +71,7 @@
             $cuenta->saldo = 0;
             $numeroCuenta->$numeroCuenta-1;
 
-            return "Se ha realizado el traspaso del saldo de la cuenta número $cuenta a su cuenta con una cantidad correspondiente a $cuenta->saldo. <br> Su saldo total es de $saldo."
+            return "Se ha realizado el traspaso del saldo de la cuenta número $cuenta a su cuenta con una cantidad correspondiente a $cuenta->saldo. <br> Su saldo total es de $saldo.";
         }
 
         public function bancarrota(){
