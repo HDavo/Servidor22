@@ -26,12 +26,14 @@
             $this->cocheCargado = $cocheCargado;
         }
 
-        public function imprimir($matricula, $marca,$carga){
-            if(!$cocheCargado){
+        //este método no imprime la información del coche grúa
+        public function imprimir(){
+            if($this->cocheCargado){
                 return "La información del coche grúa es: <br>".parent::imprimir(). "Se encuentra libre.";
             }else{
-                return parent::imprimir()." ".($this->cocheCargado)." " ;
+                return " ".parent::imprimir()." ".($this->cocheCargado)." " ;
             }
         }
+
     }
 ?>
