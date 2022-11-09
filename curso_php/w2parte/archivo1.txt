@@ -1,0 +1,3 @@
+Prueba de ficheros con php
+segunda línea
+tercera linea
