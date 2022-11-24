@@ -1,0 +1,3 @@
+Pruebas de conexión a bbdd desde php.
+El fichero driver hace que podamos conectar a la base de datos desde php.
+Debe hacerse para cada bbdd a la que queramos acceder, se puede personalizar la salida dentro de este fichero.
