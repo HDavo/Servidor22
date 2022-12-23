@@ -3,6 +3,8 @@
     //también elegimos hasta que número queremos multiplicar
     $num = 7;
     $hasta = 10;
+
+    
 ?>
 
 <!DOCTYPE html>
