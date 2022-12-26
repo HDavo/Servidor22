@@ -1,7 +1,14 @@
 <?php
-    //tabla con recogida de datos
-
+    //tabla con recogida de datos mediante get
     
+    const LIMITE = 10;
+    $error = false;
+
+    if(isset($_GET['tabla'])){
+        $num = ($_GET['tabla']);
+        // print($num); //comprobación de que el valor se asigna de manera correcta a la variable
+    }    
+
     if(isset($_GET['tabla'])){
         $r = $_GET['tabla'];
         //comprobación de que se ha mandado un valor en el formulario
@@ -20,7 +27,6 @@
 
     function formula(){
         $eleccion = "";
-        $limite = 10;
         $formulario = <<< EOF
         <form action="" method="get">
             <label for="elector">Elige un número: </label>
@@ -29,14 +35,23 @@
         </form>
         EOF;
         print($formulario);
-        
-        $num = $eleccion;
-        $i = "";
+    }
+
+    /*
+    function sacarTabla(){
+        $limite = 10;
+
+        if(isset($_GET['tabla'])){
+            $num = ($_GET['tabla']);
+            print($num);
+            
+            
+            $i = "";
         $tabla = <<< EOF
         <table>
         <thead>
             <tr>
-                <th colspan="2">Tabla del <?=$num?></th>
+                <th colspan="2">Tabla de multiplicar <?=$num?></th>
             </tr>
         </thead>
         <tbody>
@@ -50,7 +65,11 @@
         </table>
         EOF;
         print($tabla);
-    }
+        }; */
+        
+        // print_r($_GET);    
+
+    // }  
 
 ?>
 
@@ -61,7 +80,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tabla de multiplicar (selector)</title>
+    <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            #general{
+
+                width: 80vw;
+                height: 100vh;
+                margin: auto;
+            }
+
+            table {
+                width: 50%;
+                height: 80%;
+                margin: 0 auto;
+
+            }
+
+            tr, td {
+                background-color: papayawhip;
+                color: black;
+                text-align: center;
+                padding: 1%;
+
+            }
+        </style>
 </head>
 <body>
     <div>
@@ -69,6 +116,24 @@
             <h3>Intenta introducir un dato válido.</h3>
         <?php } ?>
         <?php formula() ?>
+        
+        <?php if(isset($_GET['tabla'])){ ?>
+            <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Tabla de multiplicar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php for ($i=0; $i < LIMITE; $i++) { ?>
+                    <tr>
+                        <td><?=$num?> x <?=$i?></td>
+                        <td><?=$num*$i?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+        <?php } ?>
     </div>
 </body>
 </html>
