@@ -12,9 +12,23 @@
         $segundoArray = [34,32,2,8,42,45,10,20,11,65];
 
         //intersect devuelve los valores comunes de los elementos (arrays) pasados, con las posiciones que tienen en el que mandamos como primer elemento
-
+        echo "Funcionamiento de intersect: ";
         $comunes = array_intersect($primerArray, $segundoArray);
         print_r($comunes);
+        echo "<br>";
 
-        $tercerArray = [9,];
+        //reemplazo en el caso de que estén en las mismas posiciones, en caso contrario añade en las posiciones vacías
+        echo "Funcionamiento de replace: ";
+       $cuartoArray = [0 => 75, 1 => 13, 3 => 54, 7 => 31];
+       $otros = array_replace($cuartoArray, $comunes);
+       print_r($otros);
+       echo "<br>";
+       //mirar el uso de array_diff -> Compares array against one or more other arrays and returns the values in array that are not present in any of the other arrays.
+
+       //search -> devuelve el indice en donde se encuentra el valor que se está buscando
+
+       echo "Funcionamiento de search: ";
+       $busqueda = array_search(2, $otros);
+       print_r($busqueda);
+       
 ?>
