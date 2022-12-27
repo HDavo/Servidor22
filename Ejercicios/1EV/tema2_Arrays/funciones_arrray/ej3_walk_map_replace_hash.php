@@ -41,8 +41,29 @@
     array_walk_recursive($usuariosCifrados, "crearArray");
 
     function porDefecto($valor){
-        
+        if($valor==""){
+            $valor="temp2022";
+        }
+        return ($valor);
     }
 
+    echo "<br>Usuarios con contraseñas establecidas y por defecto (sin cifrar): <br>";
+    $usuarios2 = array_map("porDefecto",$usuarios);
+    array_walk_recursive($usuarios2, "crearArray");
+
+    //parte 4
+
+    function filtrar($array){
+        if($array[1]==""){
+            return ($array[0] ." ". $array[1]); //en el caso de que no tenga contraseña se devuelve el usuario que no tiene, con lo que sabemos cuál sufre el reemplazo de la siguiente parte
+        }
+    }
+    echo "<br>Filtrado de usuarios sin contraseña: <br>";
+    $filtrados = array_filter($usuarios, "filtrar"); //filtrado
+    array_walk_recursive($filtrados, "crearArray"); //impresión de los filtrados
+
+    echo "<br>Usuarios con contraseñas por defecto y creadas (sin cifrar): <br>";
+    $usuarios = array_replace($usuarios, $usuarios2);
+    array_walk_recursive($usuarios,"crearArray");
 
 ?>
