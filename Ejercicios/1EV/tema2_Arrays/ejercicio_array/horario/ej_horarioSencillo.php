@@ -59,7 +59,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horario</title>
-    <link rel="stylesheet" href="estilos_arrays.css">
+    <link rel="stylesheet" href="./css/estilos_arrays.css">
 </head>
 <body>
     <table>
