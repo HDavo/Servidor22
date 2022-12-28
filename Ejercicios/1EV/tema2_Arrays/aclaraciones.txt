@@ -1,0 +1,2 @@
+Los ejemplos de hash están dentro del ejercicio3 de funciones.
+en el futuro hacer un ejemplo solamente de hash y poner ejemplos de cada una de las maneras (dentro de la carpeta ejercicios del tema 2)
