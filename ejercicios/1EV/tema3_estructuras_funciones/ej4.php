@@ -3,13 +3,11 @@
     /*Crea una página web que escriba span con números aleatorios entre 0 y 100,
     el proceso parará cuando el número acabe en 17 o sea primo. */
 
-    function esPrimo($num){
-        $primo = true;
 
-        for ($i=0; $i < ; $i++) { 
-            # code...
-        }
+    function crear(){
+        
     }
+
 ?>
 
 
