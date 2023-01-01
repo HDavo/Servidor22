@@ -4,8 +4,15 @@
     el proceso parará cuando el número acabe en 17 o sea primo. */
 
 
-    function crear(){
-        
+    function crear($num){
+        $primo = true;
+
+        for ($i=2; $i <= $num/2 && $primo; $i++) { 
+            if (($num % $i)== 0) {
+                $primo = false;
+            }
+        }
+        return $primo;
     }
 
 ?>
@@ -20,6 +27,11 @@
     <title>Ej4</title>
 </head>
 <body>
-    
+    <div>
+        <?php do { ?>
+            <?php $num = mt_rand(0,100); ?>
+            <?php echo $num."<br>"; ?>
+        <?php } while ($num !=17 || !$primo($num));?>
+    </div>
 </body>
 </html>
