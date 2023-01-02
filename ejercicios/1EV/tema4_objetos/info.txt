@@ -1,1 +1,24 @@
  
+public function setMatricula(String $matricula){ //se especifica el tipo de variable que se va a recibir
+            $this->matricula = $matricula;
+        }
+
+
+
+public function getMatricula():String{ //los : indican el tipo de variable que va a devolver
+            return $this->matricula;
+        }
+
+
+ public function __construct($matricula ="",$marca="",$carga=""){
+            $this->matricula = $matricula;
+            $this->marca = $marca;
+            $this->carga = $carga;
+        }
+
+
+         public function __construct($matricula ="",$marca="",$carga=""){ //el contenido del parétensis establece una serie de valores por defecto
+            $this->matricula = $matricula;
+            $this->marca = $marca;
+            $this->carga = $carga;
+        }

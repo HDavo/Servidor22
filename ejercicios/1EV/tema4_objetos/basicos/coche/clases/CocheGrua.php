@@ -16,7 +16,7 @@
             $this->cocheCargado = true;
         }
 
-        public function descargar(Coche $encima){
+        public function descargar(){
             $this->encima = null;
             $this->cocheCargado = false;
         }
@@ -26,12 +26,13 @@
             $this->cocheCargado = $cocheCargado;
         }
 
-        //este método no imprime la información del coche grúa
+        //ya imprime la información del coche que está encima de la grúa
         public function imprimir(){
             if($this->cocheCargado){
-                return "La información del coche grúa es: <br>".parent::imprimir(). "Se encuentra libre.";
+                return " ".parent::imprimir()." Esta cargado con el coche: ".($this->encima->imprimir())." " ;
             }else{
-                return " ".parent::imprimir()." ".($this->cocheCargado)." " ;
+                
+                return "La información del coche grúa es: <br>".parent::imprimir(). "Se encuentra libre.";
             }
         }
 

@@ -1,7 +1,7 @@
 <?php
-    require('./Coche.php');
-    require('./CocheConRemolque.php');
-    require('./CocheGrua.php');
+    require('./clases/Coche.php');
+    require('./clases/CocheConRemolque.php');
+    require('./clases/CocheGrua.php');
     
 
     $cocheVacio = new Coche();
@@ -17,13 +17,16 @@
 
     $cocheG2->cargar($cocheR2);
 
-    print $coche1->imprimir();
-    print $cocheR2->imprimir();
+    $cocheG3 = new CocheGrua("2412-GFK","Toyota",45);
+    $cocheG3->cargar($cocheG2); //en este coche grúa se pone otro coche grúa que ya está cargado con otro coche
+    // print $coche1->imprimir();
+    // print $cocheR2->imprimir(); 
 
-    $coches = array($coche1,$cocheR1,$cocheG1,$cocheG2);
+    //todos los objetos de tipo Coche se meten dentro de un array para poder imprimirlos
+    $coches = array($coche1,$cocheR1,$cocheG1,$cocheG2,$cocheG3);
 
 
-    print_r($coches);
+    // print_r($coches);
 
 
 ?>
