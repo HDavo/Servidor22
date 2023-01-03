@@ -48,7 +48,8 @@ Imprimir Jorge
 
     private const RACHANEG = -6;
     private const RACHAPOS = 6;
-    private const NIVELINICIAL = 0;
+    private const NIVELINICIAL = 0; //nivel inicial y nivel mínimo al que se puede llegar
+    protected $limiteAdmPre = 3;
 
 
     //constructor
@@ -121,6 +122,7 @@ Imprimir Jorge
                 if($contAsc==self::RACHAPOS){
                     $contAsc=0;
                     $this->nivelJuego=++$nivel;
+                    // echo "El usuario ha subido de nivel<br>";
                 }
             }elseif($value=='derrota'){ //ante una derrota
                 $contDes++;
@@ -128,6 +130,7 @@ Imprimir Jorge
                 if ($contDes==self::RACHANEG) {
                     $contDes=0;
                     $this->nivelJuego=--$nivel;
+                    // echo "El usuario ha bajado de nivel<br>";
                 }
             }else{ //ante un empate
                 $contAsc=0;
@@ -137,7 +140,7 @@ Imprimir Jorge
     }
 
     public function imprimir(){
-        echo "<p>-->Imprimir ".$this->nombre.":<br>Nombre: ".$this->nombre."<br/>Apellidos: ".$this->apellidos."<br/>Deporte: ".$this->deporte."<br/>Nivel Juego: ".$this->nivelJuego."<br/>Historico de partidos: ".$this->getResultados()."</p>";
+        return "<p>-->Imprimir ".$this->nombre.":<br>Nombre: ".$this->nombre."<br/>Apellidos: ".$this->apellidos."<br/>Deporte: ".$this->deporte."<br/>Nivel Juego: ".$this->nivelJuego."<br/>Historico de partidos: ".$this->getResultados()."</p>";
     }
  }  
 
