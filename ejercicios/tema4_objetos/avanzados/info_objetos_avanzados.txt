@@ -1,0 +1,4 @@
+el ejercicio plataforma de pago es un ejemplo de uso de interfaces.
+
+
+personajes: ejemplo de uso del polimorfismo
