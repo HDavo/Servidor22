@@ -3,7 +3,7 @@
     $CONFIG['db_host']= "localhost";
     $CONFIG['db_user']= "linkenin";
     $CONFIG['db_name'] = "baseforo";
-    $CONFIG['db_pass']= "linkenin";
+    $CONFIG['db_pass']= "1234";
     $CONFIG['db_port'] = "3306";
 
 ?>
