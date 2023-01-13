@@ -11,9 +11,9 @@ require("../src/init.php");
     $user = $DB->ejecuta(
         "SELECT id, nombre, passwd from usuarios where nombre = ?",$_POST['nombre']
     ); //se pilla id para facilitar consultas dentro de edit, al meter esto dentro de sesión
-
+    $user = $DB->obtenElDato();
     //con la información del usuario verificar la contraseña (en dos consultas porque esta en cifrado)
-    if(password_verify($user['passwd'], $_POST['passwd'])){
+    if(password_verify($_POST['passwd'], $user['passwd'])){
         $_SESSION['id'] = $user['id'];
         $_SESSION['nombre'] = $user['nombre'];
 

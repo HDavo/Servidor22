@@ -31,7 +31,7 @@ Por Jorge Dueñas Lerín
 
       function inicializa(
           $basedatos,         // Nombre debe ser especificado O el archivo si es SQLite
-          $usuario  = 'admin', // SE DEBE CREAR ANTES EL USUARIO EN EL GESTOR DE BASE DE DATOS
+          $usuario  = 'linkenin', // SE DEBE CREAR ANTES EL USUARIO EN EL GESTOR DE BASE DE DATOS
           $pass     = '1234', // CONTRASEÑA QUE SE LE PONE AL USUARIO DENTRO DEL GESTOR
           $motor    = 'mysql',
           $serverIp = 'localhost',
