@@ -22,3 +22,6 @@ public function getMatricula():String{ //los : indican el tipo de variable que v
             $this->marca = $marca;
             $this->carga = $carga;
         }
+
+
+        dentro de avanzados hay un ejemplo de autoload funcionando.

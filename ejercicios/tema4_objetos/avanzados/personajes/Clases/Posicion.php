@@ -10,7 +10,7 @@
             $this->posicionX = $x;
         }
 
-        public function getPosicionX():float{
+        public function getPosicionX(){
             return $this->posicionX;
         }
 
@@ -18,7 +18,7 @@
             $this->posicionY = $y;
         }
 
-        public function getPosicionY():float{
+        public function getPosicionY(){
             return $this->posicionY;
         }
 
@@ -26,12 +26,13 @@
             $this->posicionZ = $z;
         }
 
-        public function getPosicionZ():float{
+        public function getPosicionZ(){
             return $this->posicionZ;
         }
 
-        public function getPosicion():float{
-            return "X: $this->posicionX, Y: $this->posicionY, Z: $this->posicionZ";
+        public function getPosicion(){
+            $posicionGen = "La posición general es "."X: $this->posicionX, Y: $this->posicionY, Z: $this->posicionZ<br>";
+            return $posicionGen;
         }
     }
 

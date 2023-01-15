@@ -1,4 +1,13 @@
 el ejercicio plataforma de pago es un ejemplo de uso de interfaces.
 
 
-personajes: ejemplo de objetos complejos.
+personajes: ejemplo de objetos complejos y de funcionamiento de autoload.
+
+
+    este autoload sirve para -> todas las clases dentro de una carpeta y controladora fuera en la carpeta general.
+   spl_autoload_register( function ($class) {
+        $class = str_replace('\\', '/',$class);
+        // echo "$class<br>";
+        require("./$class.php"); //importante adaptar esta ruta a el plantemiento de carpetas.
+        //al hacerlo de esta manera(con la estructura de carpetas usada, no es necesario poner también el nombre de la carpeta)
+    });

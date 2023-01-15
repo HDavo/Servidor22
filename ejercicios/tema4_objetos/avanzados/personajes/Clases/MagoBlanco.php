@@ -1,9 +1,9 @@
 <?php
     namespace Clases;
 
-    class MagoBlanco {
+    class MagoBlanco extends Mago{
         public function atacar(){
-            print "Ataque de sombra<br>";
+            print "Ataque de luz<br>";
         }
     }
 ?>
