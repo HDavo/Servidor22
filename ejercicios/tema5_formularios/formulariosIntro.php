@@ -18,7 +18,7 @@
     <title>Formularios</title>
 </head>
 <body>
-    <form action="http://127.0.0.1:8000/index.php" method="post">
+    <form action="" method="post">
         Nombre: <input type="text" name="=nombre"><br>
         Sexo:<br>
         Hombre<input type="radio" name="sexo" value="H">
