@@ -1,4 +1,7 @@
 <?php
+
+use Random\Engine\Secure;
+
 require("../src/init.php");
     //recoger los datos de post
     if (isset($_POST['login'])) {
@@ -31,9 +34,20 @@ require("../src/init.php");
             setcookie(
                 'recuerdame',
                 $token,
-                time()+(7*24*60*60)
+                [
+                    "expires" => (time()+(7*24*60*60)),
+                    // "secure" => true,
+                    "httponly" => true
+                ]
+                
             );
+            
             print("Clave correcta");
+
+            //faltan cosas de token y del expire
+            if(isset($_GET['redirect'])){
+                header("Location: {$_GET['redirect']}");
+            }
         }
     }else{
 
@@ -50,13 +64,26 @@ require("../src/init.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        body{
+            background-color: papayawhip;
+        }
+    </style>
 </head>
 <body>
-    <form action="" method="post">
-        Usuario: <input type="text" name="nombre">
-        Contraseña: <input type="password" name="passwd">
-        Recuerdame: <input type="checkbox" name="recuerdame" id="">
-        <input type="submit" name="login" value="Enviar">
-    </form>
+    <div>
+        <form action="" method="post">
+            Usuario: <input type="text" name="nombre">
+            Contraseña: <input type="password" name="passwd">
+            Recuerdame: <input type="checkbox" name="recuerdame" id="">
+            <input type="submit" name="login" value="Enviar">
+        </form>
+    </div>
+    
 </body>
 </html>

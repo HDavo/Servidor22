@@ -15,4 +15,5 @@
     );
     //pon politica de cookies
     session_start();
+    require("recuerdame.php");
 ?>

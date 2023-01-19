@@ -1,6 +1,8 @@
 <?php
+
+    require("../src/init.php");
     //se hace esto porque necesita autenticación
-    if(!isset($_SESSION['user']) || $_SESSION['user'] == ""){
+    if(!isset($_SESSION['nombre']) || $_SESSION['nombre'] == ""){
         header("Location: login.php?redirect=edit.php");
         die();
     }
@@ -16,6 +18,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Aqui viene el formulario para editar tu perfil</h1>
+    <h1>Aqui va el formulario para editar tu perfil</h1>
 </body>
 </html>
