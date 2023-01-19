@@ -7,20 +7,40 @@
 
          if(isset($_COOKIE['recuerdame'])){
             // verificamos en la base de datos el usuario de ese token y lo obtenemos
-            $DB->ejecuta(
-                "select u.id, u.nombre
-                from usuarios u
-                left join toknes t on u.id = t.id_usuario
-                where t.valor = '9098b0586cc4a45a8b982aa0bc74beb77911f68ec78df1a760376c86d422341b70085efc7d5b1a1aa2bd48f518fff176c9627e7b75171455c143c2f477794a2d'
-                and t.expiracion > now()",
+            $DB->ejecuta( //ACTUALIZAR LAS COSAS
+                "SELECT u.id, u.nombre, t.valor
+                FROM usuarios u
+                LEFT JOIN tokens t ON u.id = t.id_usuario
+                WHERE t.valor = ? AND t.expiracion > NOW()",
+                $_COOKIE['recuerdame']
+
             );
-            $token = $DB->obtenElDato();
-            if($token  != null){
+            $tokenInfoDb = $DB->obtenElDato();
+
+            if($tokenInfoDb  != null){
                 //login
-                $_SESSION['id'] = $token['id'];
-                $_SESSION['nombre'] =$token['nombre'];
-                // extiendo la vida del token una semana más
-                
+                $_SESSION['id'] = $tokenInfoDb['id'];
+                $_SESSION['nombre'] =$tokenInfoDb['nombre'];
+                // extiendo la vida del token una semana más (necesario para que en cada inicio de sesión nos recuerde y no caduque)
+                    //vida de cookie
+                    setcookie(
+                        'recuerdame',
+                        $tokenInfoDb ['valor'],
+                        [
+                            "expires" => (time()+(7*24*60*60)),
+                            // "secure" => true,
+                            "httponly" => true
+                        ]
+                        
+                    );
+                    //PONER LAS COSAS QUE FALTAN
+                    //vida del token
+                    $DB->ejecuta("UPDATE tokens SET expiracion = NOW() + INTERVAL DAY WHERE
+                    valor = ?",
+                    $tokenInfoDb['valor']
+                );
+
+
             }
 
          }

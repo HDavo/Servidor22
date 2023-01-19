@@ -1,35 +1,45 @@
 <?php
-
 use Random\Engine\Secure;
 
 require("../src/init.php");
+
+echo "Hola";
+print_r($_SESSION);
+print_r($_POST);
+
     //recoger los datos de post
-    if (isset($_POST['login'])) {
-        $nombre = $_POST['nombre'];
-        $passwd = $_POST['passwd'];
-        $recuerdame = $_POST['recuerdame'];
-    }
+if (isset($_POST['login'])) {
+    $nombre = $_POST['nombre'];
+    $passwd = $_POST['passwd'];
+    $recuerdame = $_POST['recuerdame'];
+
     //consulta a base de datos por el usuario
 
-    $user = $DB->ejecuta(
-        "SELECT id, nombre, passwd from usuarios where nombre = ?",$_POST['nombre']
+    $DB->ejecuta(
+        "SELECT id, nombre, passwd FROM usuarios WHERE nombre = ?",
+        $_POST['nombre']
     ); //se pilla id para facilitar consultas dentro de edit, al meter esto dentro de sesión
+
     $user = $DB->obtenElDato();
-    //con la información del usuario verificar la contraseña (en dos consultas porque esta en cifrado)
+
+    //verificación de la contraseña con la información recuperada del usuario (en dos consultas porque esta en cifrado)
     if(password_verify($_POST['passwd'], $user['passwd'])){
         $_SESSION['id'] = $user['id'];
         $_SESSION['nombre'] = $user['nombre'];
 
-        if(isset($_POST['recuerdame']) && $_POST['recuerdame'] == 'on'){ //se ha pedido que se le recuerde
-             //si ha pedido recuerdame
+        print("Clave correcta");
+        //Si se ha pedido que se le recuerde
+        if(isset($_POST['recuerdame']) && $_POST['recuerdame'] == 'on'){ //'on' por ser un campo checkbox
+
             //generar token
             $token = bin2hex(openssl_random_pseudo_bytes(LONG_TOKEN));
             //guardar token
             $DB->ejecuta(
                 "INSERT INTO tokens (id_usuario, valor) VALUES (?,?)",
-                $user['id'],
+                $_SESSION['id'],
                 $token
             );
+            
             //cookie con token
             setcookie(
                 'recuerdame',
@@ -38,21 +48,23 @@ require("../src/init.php");
                     "expires" => (time()+(7*24*60*60)),
                     // "secure" => true,
                     "httponly" => true
-                ]
-                
+                ]  
             );
-            
-            print("Clave correcta");
-
-            //faltan cosas de token y del expire
-            if(isset($_GET['redirect'])){
-                header("Location: {$_GET['redirect']}");
-            }
         }
-    }else{
+        
+        if(isset($_GET['redirect'])){
+            header("Location: {$_GET['redirect']}");
+            die();
+        }else{
+            header("Location: listado.php");
+            die();
+        }
 
+    }else{
         echo "Mostrar error";
     }
+}
+
 
    
 ?>

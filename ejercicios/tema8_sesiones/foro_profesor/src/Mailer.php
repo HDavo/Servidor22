@@ -42,6 +42,7 @@
         //opción para
 
         $mail->send();
+        echo "Mensaje enviado";
         // echo 'Message has been sent';
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
