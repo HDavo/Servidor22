@@ -1,8 +1,0 @@
-Estructura de la carpeta ejercicios:
-1ev
-- desde el tema1 hasta el tema6_bbd (inluyendo generarPdf)
-
-2ev
-- desde el tema7
-
-
