@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- meter estilo en un fichero aparte -->
+    <!-- Sería recomendable meter los estilos en un fichero aparte -->
     <style>
         body{
             background-color: #EAEAEA;

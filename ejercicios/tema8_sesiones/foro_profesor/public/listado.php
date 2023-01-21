@@ -1,38 +1,56 @@
 <?php
     require('../src/init.php');
 
-    $DB->ejecuta("SELECT * FROM usuarios");
-    $usuarios = $DB->obtenDatos();
-
-
     $title = "Listado de usuarios";
     $pageHeader = "Listado";
     $pageId = "Listado";
-
     $content = "Este es el contenido";
 
-    require("template.php");
 
     //el controlador obtiene info del modelo
     $DB->ejecuta("select * from usuarios");
     $usuarios = $DB->obtenDatos();
 
     //Se lo pasa a template (se puede establecer contenido personalizado para cada una de las páginas)
-    ob_start(); //mete el contenido especificado dentro deun buffer, por lo que no se muestra al usuario hasta que no se especifica
+    ob_start();
+    //con ob_start se mete el contenido especificado dentro de un buffer, por lo que no se muestra al usuario hasta que no se especifica.
 
-    //meter tabla 
-    $content = ob_get_clean();
+    ?>
 
-
+    <table>
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Foto</td>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($usuarios as $usuario) { ?>
+                <tr>
+                    <td><?=$usuario['nombre']?></td>
+                    <td><img src="<?=$usuario['img']?>" alt="Imagen de usuario"></td>
+                </tr>    
+            <?php } ?>
+        </tbody>
+    </table>
     
+
+
+    <?php
+
+    $content=ob_get_clean(); //se limpia el buffer
+
+    require("template.php");
 
     /*<?php foreach($usuarios as $usuario) { ?>
         <?php 
             print_r($usuario);
         ?>
     <?php } ?> */
-?>
 
+
+
+/*
 <!-- lo siguiente nos viene dado por la plantilla -->
 
 <!-- <!DOCTYPE html>
@@ -58,3 +76,6 @@
     
 </body>
 </html> -->
+*/
+
+?>

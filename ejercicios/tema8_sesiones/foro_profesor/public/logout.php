@@ -8,7 +8,7 @@
         unset($_SESSION['nombre']);
     }
     
-    //esto es lo necesario para acaar la sesión
+    //esto es lo necesario para acabar la sesión
     session_destroy();
 
     setcookie("PHPSESSID", null);
