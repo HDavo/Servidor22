@@ -1,0 +1,23 @@
+//Acceso a MariaDB
+mariadb -u anabel -p mibasededatos
+mariadb -u examen -p examen -->contraseña:examen;
+
+//Para ver las bases de datos:
+SHOW DATABASES;
+
+//Para ver las tablas de una base de datos (TODAS);
+SHOW TABLES FROM nombreBaseDatos;
+
+//PARA CREAR UNA NUEVA BASE DE DATOS
+CREATE DATABASE nbbdd;
+
+
+//Para ver los datos de una tabla;
+SELECT * FROM nbTabla;
+
+//Para ver los campos y los tipos de datos que se admiten de una tabla;
+DESC nbtabla;
+
+//Para borrar una tabla;
+DROP TABLE nbtabla;
+DROP TABLE IF EXISTS nbtabla;
