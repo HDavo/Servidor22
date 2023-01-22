@@ -13,7 +13,7 @@
     * [Tema 5: Formularios](https://github.com/HDavo/Servidor22/tree/main/ejercicios/tema5_formularios "Tema 5")
     * [Tema 6: Bases de datos](https://github.com/HDavo/Servidor22/tree/main/ejercicios/tema6_bbdd "Tema 6")
     * [Tema 7: Cookies](https://github.com/HDavo/Servidor22/tree/main/ejercicios/tema7_cookies "Tema 7")
-    * [Tema 8: Sesiones](https://github.com/HDavo/Servidor22/tree/main/ejercicios/tema8_sesiones/foro_profesor "Tema 8")
+    * [Tema 8: Sesiones](https://github.com/HDavo/Servidor22/tree/main/ejercicios/tema8_sesiones "Tema 8")
 3. Pruebas    
 
 
