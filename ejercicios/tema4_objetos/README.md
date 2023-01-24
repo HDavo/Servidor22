@@ -38,5 +38,5 @@ spl_autoload_register( function ($class) {
 
 ```
 
-
-
+### Contenido pendiente de teoría de objetos
+Implements, traits, extends, interfaces...
