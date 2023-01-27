@@ -2,7 +2,11 @@
 ## Repositorio de la asignatura Entorno Servidor, curso 22/23.
 
 ### Contenidos:
-#### PHP
+#### PHP y Python
+
+PHP comprende los 8 primeros temas de la carpeta ejercicios.
+
+Python comprende desde la carpeta del tema 9.
 
 1. Curso Php
 
@@ -17,8 +21,8 @@
     * [Tema 6: Bases de datos](https://github.com/HDavo/Servidor22/tree/main/ejercicios/tema6_bbdd "Tema 6")
     * [Tema 7: Cookies](https://github.com/HDavo/Servidor22/tree/main/ejercicios/tema7_cookies "Tema 7")
     * [Tema 8: Sesiones](https://github.com/HDavo/Servidor22/tree/main/ejercicios/tema8_sesiones "Tema 8")
+    * [Tema 9: Inicio Python](https://github.com/HDavo/Servidor22/tree/main/ejercicios/inicio_python "Tema 9")
 
-#### Python
 
 3. Pruebas    
 
