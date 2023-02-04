@@ -4,7 +4,8 @@ from django.shortcuts import get_object_or_404,render
 # Estos dos se usan en el caso de no usar render
 
 from django.http import HttpResponse
-from django.template import loader
+# from django.template import loader
+from django.shorcuts import render
 
 
 from .models import Question
