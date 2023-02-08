@@ -58,7 +58,7 @@ def get_songs_by_artist(token, artist_id): #buscar canciones de un determinado a
 
 token = get_token()
 # print(token)
-result = search_for_artist(token, "Kendrick Lamar")
+result = search_for_artist(token, "2PAC")
 print(result["name"])
 artist_id = result["id"]
 songs = get_songs_by_artist(token, artist_id)
