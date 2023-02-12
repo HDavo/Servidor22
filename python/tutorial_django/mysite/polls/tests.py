@@ -32,9 +32,8 @@ class QuestionModelTests(TestCase):
         """
         
 def create_question(question_text, days):
-    """
-    Crea una pregunta con el texto y los días dados, con los días crea una referencia respecto a la fecha actual. En el caso de que sea una pregunta publicada anteriormente o sea posterior a la fecha, establece un signo negativo o positivo para indicar la diferencia entre las fechas.
-    """ 
+    
+    # Crea una pregunta con el texto y los días dados, con los días crea una referencia respecto a la fecha actual. En el caso de que sea una pregunta publicada anteriormente o sea posterior a la fecha, establece un signo negativo o positivo para indicar la diferencia entre las fechas.
     time = timezone.now() + datetime.timedelta(days=days)
     return Question.objects.create(question_text=question_text,pub_date=time)
     
@@ -50,7 +49,7 @@ class QuestionIndexVIewTest(TestCase):
         # muestra el mensaje en caso de que no existan preguntas.
         self.assertContains(response, "No polls are available.")
         # obtiene una lista de las últimas preguntas
-        self.assertContains(response.context['latest_question_list'],
+        self.assertQuerysetEqual(response.context['latest_question_list'],
         [])
         
     def test_past_question(self):
@@ -71,6 +70,7 @@ class QuestionIndexVIewTest(TestCase):
         create_question(question_text="Future question.", days=30)
         response = self.client.get(reverse('polls:index'))
         self.assertContains(response, "No polls are available.")
+        self.assertQuerysetEqual(response.content['latest_quesion_list'], [])
         
     def test_future_question_and_past_question(self):
         """

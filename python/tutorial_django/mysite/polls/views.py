@@ -16,14 +16,13 @@ class IndexView(generic.ListView):
         # para devolver las últimas 5 publicaciones
         # la siguiente línea permitía que se muestren preguntas que tenían fechas de publicación en el futuro
         # return Question.objects.order_by('-pub_date')[:5]
-        
         # la siguiente línea arregla el problemas de las preguntas futuras que se mostraban 
-        return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:10]
+        return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
     
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'polls/detail.html'
-    # con lo siguiente se excluyen (no se muestran) las preguntas que no han sido publicadas aún (pub_date en el futuro)ç
+    # con lo siguiente se excluyen (no se muestran) las preguntas que no han sido publicadas aún (pub_date en el futuro)
     def get_queryset(self):
         return Question.objects.filter(pub_date__lte=timezone.now())
 
