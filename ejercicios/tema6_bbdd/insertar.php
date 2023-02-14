@@ -1,5 +1,5 @@
 <?php
-    require('./accesoBD.php');
+    require('./accesoBDBasico.php');
 
     $stmt = $dbh->prepare("INSERT INTO Ciclistas (id, nombre, num_trofeos) VALUES (:id,:nombre,:num_trofeos)");
 

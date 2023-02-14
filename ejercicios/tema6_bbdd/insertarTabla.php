@@ -1,5 +1,5 @@
 <?php
-    require('./accesoBD.PHP');
+    require('./accesoBDBasico.php');
 
     $datos = [];
     $errores = [];

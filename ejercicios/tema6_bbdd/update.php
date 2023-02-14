@@ -1,5 +1,5 @@
 <?php
-    require('./accesoBD.php');
+    require('./accesoBDBasico.php');
 
     $update = $dbh->prepare("UPDATE Ciclistas SET nombre = :nombre WHERE id = :id");
 

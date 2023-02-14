@@ -1,5 +1,5 @@
 <?php
-    require('./accesoBD.php');
+    require('./accesoBDBasico.php');
 
     $stmt = $dbh->prepare('SELECT * FROM Ciclistas');
     $stmt->setFetchMode(PDO::FETCH_ASSOC);

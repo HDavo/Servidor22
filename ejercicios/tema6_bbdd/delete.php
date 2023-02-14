@@ -1,6 +1,6 @@
 <?php
 
-    require('accesoBD.php');
+    require('accesoBDBasico.php');
 
     $delete = $dbh->prepare("DELETE FROM Ciclistas WHERE id = :id");
     $id=8;

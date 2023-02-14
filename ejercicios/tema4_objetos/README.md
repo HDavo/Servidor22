@@ -38,12 +38,11 @@ spl_autoload_register( function ($class) {
 
 ```
 
-### Contenido pendiente de teoría de objetos
-//añadir ejemplos de cada una de las implementaciones
-
+### Ejemplos de herencia.
 
 #### Ejemplo de Interface
 Implements -> interfaces
+
 **Creación**
 ```
 <?php 
@@ -55,6 +54,7 @@ Implements -> interfaces
     }
 ?>
 ```
+
 **Uso**
 ```
 <?php 
@@ -121,6 +121,7 @@ Extends -> clases abstractas y clases
 ```
 #### Ejemplo de Trait
 Traits -> use (dentro de una clase) + nb / dirección del trait
+
 **Creación**
 ```
 class Base {

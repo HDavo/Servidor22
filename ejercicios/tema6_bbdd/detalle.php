@@ -1,5 +1,5 @@
 <?php
-    require('./accesoBD.php');
+    require('./accesoBDBasico.php');
     
     $id=$_GET['id'];
     $stmt = $dbh->prepare('SELECT * FROM Ciclistas WHERE id=:id');
