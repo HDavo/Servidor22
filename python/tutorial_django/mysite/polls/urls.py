@@ -32,3 +32,11 @@ urlpatterns = [
     # path('api/', include(router.urls))
    # añadido para poder usar rest
 ]
+
+"""
+En comentarios, ejemplos de equivalencias en el navegador
+/polls/
+/polls/5
+/polls/5/vote
+/polls/5/results
+"""

@@ -29,6 +29,7 @@ def detail(request, question_id):
     return render(request, 'polls/detail.html', {'question': question}) """
 
 def detail(request, question_id):
+    # pide al modelo Question, la pregunta con ese id y si no la encuentras levanta una excepción 404
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question': question})
 

@@ -1,9 +1,12 @@
-{% comment %} {% extends 'polls/index.html' %} {% endcomment %}
+{% comment %} {% extends %} {% endcomment %}
+
+{% block title %}
+    ERROR 404
+{% endblock %}
 
 {% block content %}
-
-<div>
-    <img src="" alt="">
-    <h1>No encontrado</h1> 
-</div>
+    <div>
+        <img src="" alt="img-errors">
+        <h1>404 NO ENCONTRADO</h1>
+    </div>
 {% endblock %}
