@@ -26,6 +26,8 @@ PHP comprende los 8 primeros temas de la carpeta ejercicios.
 #### Python
 Inicio sería el equivalente al tema 9.
 
-1. [Inicio](https://github.com/HDavo/Servidor22/tree/main/python "Inicio")
+1. [Python](https://github.com/HDavo/Servidor22/tree/main/python "Python")
+    * [Tutorial Django](https://github.com/HDavo/Servidor22/tree/main/python/tutorial_django "Tutorial Django")
+    * [Ejemplo API](https://github.com/HDavo/Servidor22/tree/main/python/tutorial_api_spo "API")
 
 

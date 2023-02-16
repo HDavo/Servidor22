@@ -57,6 +57,17 @@ def vote(request, question_id):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
-        # con reverse hace que no tengamos que poner de forma específica la url, si no que podemos usar la url definida para esa vista dentro del namespace
+        return HttpResponseRedirect(reverse('polls:results', args=(question.id,))) # con reverse hace que no tengamos que poner de forma específica la url, si no que podemos usar la url definida para esa vista dentro del namespace y la necesidad de cambiar urls en el caso de que se modifiquen
         # Evita que usemos return HttpResponseRedirect(f"/polls/{question.id}/results)
+        
+
+# Desde aquí se mete el serializer de rest
+""" from rest_framework import viewsets
+from .serializer import QuestionSerializer
+
+
+class QuestionViewSet(viewsets.ModelViewSet):
+    
+    queryset = Question.objects.all().order_by('pub_date')
+    serializer_class = QuestionSerializer
+     """
