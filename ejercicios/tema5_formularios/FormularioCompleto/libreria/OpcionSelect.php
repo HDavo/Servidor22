@@ -1,5 +1,5 @@
 <?php
-    namespace libreria;
+    namespace FormularioCompleto\libreria;
 
     use \libreria\Opcion; 
     

@@ -1,5 +1,5 @@
 <?php
-    namespace libreria;
+    namespace FormularioCompleto\libreria;
 
     enum Genero : string {
         case HOMBRE = "Hombre";

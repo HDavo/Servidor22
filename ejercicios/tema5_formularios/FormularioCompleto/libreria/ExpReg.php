@@ -1,5 +1,5 @@
 <?php
-    namespace libreria;
+    namespace FormularioCompleto\libreria;
 
     enum ExpReg : string {
 

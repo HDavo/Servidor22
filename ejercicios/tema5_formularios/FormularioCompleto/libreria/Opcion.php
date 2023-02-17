@@ -1,5 +1,5 @@
 <?php
-    namespace libreria;
+    namespace FormularioCompleto\libreria;
 
     abstract class Opcion {
         private string $value;

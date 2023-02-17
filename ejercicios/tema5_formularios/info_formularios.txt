@@ -1,7 +1,0 @@
-//para evitar ataques XCS enviados a través de formularios
-        function limpieza($datos){
-            $datos = trim($data);
-            $datos = stripslashes($datos);
-            $datos = htmlspecialchars($datos);
-            return $datos;
-        }

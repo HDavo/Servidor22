@@ -1,5 +1,5 @@
 <?php
-    namespace libreria;
+    namespace FormularioCompleto\libreria;
 
     enum TiposInput : string {
         case DATE = "date";

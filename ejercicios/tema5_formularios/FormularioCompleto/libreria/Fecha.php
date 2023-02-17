@@ -1,6 +1,6 @@
 <?php 
 
-namespace libreria;
+namespace FormularioCompleto\libreria;
 
 use Exception;
 

@@ -1,9 +1,9 @@
 <?php
-    namespace libreria;
+    namespace FormularioCompleto\libreria;
 
     use \libreria\Opcion;
     
-    class opcionRadio extends Opcion {
+    class OpcionRadio extends Opcion {
         private string $name;
 
         public function __construct($label, $value, $id, string $name){
