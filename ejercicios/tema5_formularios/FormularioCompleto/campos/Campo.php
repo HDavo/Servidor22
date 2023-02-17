@@ -1,5 +1,5 @@
 <?php
-    namespace FormularioCompleto\libreria;
+    namespace FormularioCompleto\campos;
 
     use FormularioCompleto\libreria\TiposInput;
 
