@@ -1,3 +1,28 @@
+## Concatenar
+
+Se usa + para concatenar
+```
+name = input("What is your name? ")
+
+print("Hello, " + name)
+```
+## Captura de datos
+
+```
+# para capturar inputs del usuario, devuelve lo introducido en forma de string
+name = input("What is your name? ")
+
+print("Hello, " + name)
+```
+
+## Conversión entre tipos de datos
+```
+int()
+float()
+bool()
+str() 
+```
+
 ## Ejemplo de creación de una variable
 ```
 pepe = "humano"
