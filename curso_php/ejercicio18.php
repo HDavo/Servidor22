@@ -8,7 +8,7 @@
 
     //forma de generar numeros decimales aleatorios entre dos numeros
     function random_float ($min,$max)    {
-        return ($min+lcg_value()*(abs($max - &min)));
+        return ($min+lcg_value()*(abs($max - $min)));
         //lcg_value devuelve numeros aleatorios entre 0 y 1.
         /* Lo que hace esta función es usar ese número decimal para sumarlo al minimo y después lo multiplica por la diferencia absoluta de los límites, dando lugar un número aleatorio decimal al sumarle lo obtenido por la función lcg_value*/
     }

@@ -4,12 +4,12 @@
         $valorA=$_POST['valorA'];
         $valorB=$_POST['valorB'];
         
-        if ($valorA != $valorB) && ($valorA > $valorB) {
+        if (($valorA != $valorB) && ($valorA > $valorB)) {
             //ambas parte de la condición son verdaderas, en el caso de que una sea falsa no se mostraría nada
             echo "El valor de A es diferente al de B y también es mayor";
         }
 
-        if ($valorA != $valorB) || ($valorA > $valorB) {
+        if (($valorA != $valorB) || ($valorA > $valorB)) {
             //se evaluan las dos condiciones. Si alguno de los elementos es verdadero, todo será verdadero.
             echo "El valor de A es diferente al de B y también es mayor";
         }

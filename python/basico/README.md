@@ -15,6 +15,26 @@ name = input("What is your name? ")
 print("Hello, " + name)
 ```
 
+## Operadores 
+
+`i+=1 #python no tiene el operador ++ `
+### De comparación
+
+```
+>
+>=
+<
+<=
+==
+!=
+```
+### Lógicos
+```
+and
+or
+not
+```
+
 ## Conversión entre tipos de datos
 ```
 int()
@@ -38,8 +58,29 @@ print(pepe)
 
 print("Hello", "how are you?", "Me llamo Pepe", sep="**") 
 ```
+
+## Buscar dentro de un string 
+```
+etc = "strings in Python"
+
+print(etc.find("h")) #devuelve la primera posición de la primera coincidencia, puede ser letra o string dentro de find
+
+print(etc.replace("t", "c"))
+print("str" in etc) #devuelve un boolean si hay o no coincidencia
+```
 ***
 # Bucles
+## while
+```
+i = 1
+while i < 10:
+  print(i)
+  if i == 3:
+    break
+  i += 1
+```
+
+
 ## Ejemplo de if
 ```
 a = 2
@@ -51,8 +92,8 @@ if a!=0:
 	if a<0:
 		print(a, 'Es negativo.')
 ```
-
-## Ejemplo de if else
+## IF
+### Ejemplo de if + else
 ```
 a = 2
 b = 4
@@ -67,6 +108,21 @@ if a<b:
 else:
 	print(a, 'is not less than', b)
 ```
+
+### Ejemplo de elsif
+
+```
+a = 45
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+else:
+  print("a is greater than b")
+```
+
+
 ***
 ## For
 

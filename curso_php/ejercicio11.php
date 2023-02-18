@@ -27,7 +27,7 @@
             }
         }
         if(($valorA==$valorB) && ($valorA==4)) {
-            echo "El valor de A es igual a B y es un número 4"
+            echo "El valor de A es igual a B y es un número 4";
         }
 
     }
