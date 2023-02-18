@@ -1,0 +1,1 @@
+prueba para comprobar la clave ssh de la máquina clonada
