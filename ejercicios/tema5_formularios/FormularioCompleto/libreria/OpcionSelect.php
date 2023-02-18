@@ -1,8 +1,8 @@
 <?php
     namespace FormularioCompleto\libreria;
 
-    use \libreria\Opcion; 
-    
+use FormularioCompleto\libreria\Opcion;
+
     class OpcionSelect extends Opcion {
         private string $id;
         private string $name;

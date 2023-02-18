@@ -11,7 +11,7 @@
 
         private string $error;
 
-        public function __construct(string $label="", string $name = "", TiposInput $type = TiposInput::TEXT, string $id = "", $error = ""){
+        public function __construct(string $label="", string $name = "", TiposInput $type = TiposInput::TEXT, string $id = "", string $error = ""){
             $this->label = $label;
             $this->name = $name;
             $this->type = $type;

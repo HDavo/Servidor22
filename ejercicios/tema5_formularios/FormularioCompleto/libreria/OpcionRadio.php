@@ -1,7 +1,8 @@
 <?php
     namespace FormularioCompleto\libreria;
 
-    use \libreria\Opcion;
+use FormularioCompleto\libreria\Opcion;
+
     
     class OpcionRadio extends Opcion {
         private string $name;

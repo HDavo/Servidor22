@@ -2,6 +2,9 @@
     namespace FormularioCompleto\libreria;
 
     trait Placeholder {
+
+        private string $placeholder;
+
         public function getPlaceholder():string {
             return $this->placeholder;
         }
