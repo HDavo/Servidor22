@@ -1,0 +1,16 @@
+{% load static %}
+
+{% comment %} <link rel="stylesheet" href="{% static 'po/style.css' %}"> {% endcomment %}
+
+<h1>Hilos</h1>
+{% if latest_question_list %}
+    <ul>
+        {% for hilo in latest_question_list %}
+            <li>
+                <a href="{% url 'hilos:detail' hilos.id %}">{{ hilos.titulo }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay hilos</p>
+{% endif %}
