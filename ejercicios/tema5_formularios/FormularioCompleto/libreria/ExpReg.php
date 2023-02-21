@@ -27,5 +27,7 @@
          * Fecha formato YYYY-MM-DD
          */
         case DATE = '/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/';
+
+        case COD_POSTAL = '/^[0-9]{5}$/';
     }
 ?>
