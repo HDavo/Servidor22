@@ -2,7 +2,7 @@
     require("../src/init.php");
 
     //en el caso de que no esté registrado, se revisa el formulario de registro
-
+    print_r($_POST);
     if (!isset($_SESSION['nombre'])) {
         if ($_POST['enviar']) {
             if (isset($_POST['nombre']) && $_POST['nombre']!="" && isset($_POST['passwd']) && $_POST['passwd']!="" && isset($_POST['correo']) && $_POST['correo']!="") {
@@ -31,8 +31,23 @@
                     $_SESSION['nombre'] = $nombre;
                     $_SESSION['correo'] = $consulta['correo'];
                     $_SESSION['id'] = $consulta['id'];
-                    header("Location: ".$paginaAnterior);
-                    die();
+                    // header("Location: ".$paginaAnterior);
+                   
+                    //aqui se envia el correo
+                  
+                        if($db->getExecuted()){
+                            Mailer::sendEmail(
+                                $_POST['correo'],
+                                "Nuevo usuario",
+                                <<<EOL
+                                    Bienvenido {$_POST['nombre']},
+                                    Has hecho bien en registrarte.
+                                EOL
+                            );
+                            echo "<br>SE ha enviado el correo";
+                        }
+                    
+                    // die();
                 }else{
                     echo "El nombre de usuario ya existe";
                 }

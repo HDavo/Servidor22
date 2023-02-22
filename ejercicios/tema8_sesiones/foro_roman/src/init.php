@@ -1,7 +1,11 @@
 <?php
-
+    
+    require('Mailer.php');
     require("config.php");
+    require('paginaAnterior.php');
     require("DWESBaseDeDatos.php");
+    require('../vendor/autoload.php');
+   
 
     $db = DWESBaseDatos::obtenerInstancia();
     $db->inicializa(
