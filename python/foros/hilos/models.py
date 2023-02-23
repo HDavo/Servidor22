@@ -24,7 +24,7 @@ class Hilo(models.Model):
     creador = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     titulo = models.CharField(max_length=100)
     fecha_creacion = models.DateTimeField('fecha_creacion_hilo')
-    
+    # comentarios = models.ManyToManyField(Comentario)
     def __str__(self):
         return f"{self.creador} ({self.titulo}) ({self.fecha_creacion})"
 
@@ -46,7 +46,15 @@ class Comentario(models.Model):
     def verComentario(self):
         self.__str__()
         self.getImages()
-    
+
+""" class Hilo(models.Model):
+    creador = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=100)
+    fecha_creacion = models.DateTimeField('fecha_creacion_hilo')
+    comentarios = models.ManyToManyField(Comentario)
+    def __str__(self):
+        return f"{self.creador} ({self.titulo}) ({self.fecha_creacion})" """
+
     
 """ from django.db import models
 

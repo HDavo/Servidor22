@@ -2,3 +2,5 @@ python/.vscode/
 python/tutorial_api_spo/.env
 python/tutorial_django/mysite/polls/serializer.py
 python/foros/foros/settings.py
+python/misitio/misitio/aplicacion/media
+python/misitio/misitio/local_settings.py
