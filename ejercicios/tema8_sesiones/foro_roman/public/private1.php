@@ -17,6 +17,13 @@
     <title>Área privada</title>
 </head>
 <body>
-    <h1>Privada, hola <?= $username?></h1> 
+        <h1>PRIVADA 1, hola <?=$username?></h1>
+    <a href="index.php">index</a>
+    <a href="login.php">login</a>
+    <a href="register.php">register</a>
+    <a href="private1.php">private1</a>
+    <a href="private2.php">private2</a>
+    <a href="private3.php">private3</a>
+    <a href="logout.php">logout</a>
 </body>
 </html>
