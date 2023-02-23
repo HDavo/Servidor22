@@ -46,6 +46,9 @@
                             );
                             echo "<br>SE ha enviado el correo";
                         }
+                        // no comprobado su funcionamiento
+                        // header("Location: ".$paginaAnterior);
+                        // die();
                     
                     // die();
                 }else{

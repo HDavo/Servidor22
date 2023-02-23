@@ -1,7 +1,7 @@
 # re_path e include añadidos para poder usar rest (no necesarios dentro del tutoral de django)
 from django.urls import path, re_path, include
 
-from . import views
+from .import views
 
 
 # líneas añadidas para poder usar rest
