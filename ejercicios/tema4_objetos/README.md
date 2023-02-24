@@ -46,12 +46,19 @@ Implements -> interfaces
 **Creación**
 ```
 <?php 
-
+    //este ejemplo fija el tipo de dato a devolver
     interface IPlataformaPago{
         public function estableceConexion():bool;
         public function compruebaSeguridad():bool;
         public function pagar(string $cuenta, int $cantidad);
     }
+?>
+```
+
+```
+<?php
+    //Este es un ejemplo de como establecer el tipo de variable que se debe recibir
+    public function intentar(string $nombre); 
 ?>
 ```
 
@@ -76,6 +83,8 @@ Implements -> interfaces
     }
 ?>
 ```
+
+
 #### Ejemplo de clases abstractas
 Extends -> clases abstractas y clases
 
