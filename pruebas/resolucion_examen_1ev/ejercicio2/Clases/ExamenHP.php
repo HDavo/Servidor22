@@ -6,11 +6,11 @@
         private const MIN = 4;
         private const MAX = 5;
 
-        public function __construct($nombre){
+        function __construct($nombre){
             parent::intentar($nombre);
         }
 
-        public function obtenerNota():int{
+        function obtenerNota():int{
             return rand(self::MIN,self::MAX);
         }
     }

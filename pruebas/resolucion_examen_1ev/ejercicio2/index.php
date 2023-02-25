@@ -29,9 +29,8 @@
 
         //uso de examen hp
 
-        $cosa4 = new Clases\ExamenHp('Ejemplo de examen imposible');
+        $cosa3 = new Clases\ExamenHP('Ejemplo de examen imposible');
         echo "<br>Nota del examen HP: ".$cosa3->obtenerNota();
-
     ?>
 </body>
 </html>
