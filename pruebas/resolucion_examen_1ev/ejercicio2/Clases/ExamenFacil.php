@@ -1,17 +1,17 @@
 <?php 
-    namespace ejercicio2\clases;
+    namespace Clases;
 
     // require('./Aexamen.php');
 
     class ExamenFacil extends AExamen{
-        const NOTA_MIN=5;
-        const NOTA_MAX=10;
+        private const NOTA_MIN = 5;
+        private const NOTA_MAX = 10;
         
 
-        public function __construct($nombre){
+        function __construct($nombre){
             parent::intentar($nombre);
         }
-        public function obtenerNota(){
+        function obtenerNota():int{
             return rand(self::NOTA_MIN, self::NOTA_MAX);
         }
     }

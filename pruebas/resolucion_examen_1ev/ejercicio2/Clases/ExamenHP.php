@@ -1,16 +1,17 @@
 <?php
 
-    namespace ejercicio2\clases;
+    namespace Clases;
     // require('./Aexamen.php');
     class ExamenHp extends AExamen{
-        public const NOTA_HP=random_int(4,5);
+        private const MIN = 4;
+        private const MAX = 5;
 
         public function __construct($nombre){
             parent::intentar($nombre);
         }
 
         public function obtenerNota():int{
-            return self::NOTA_HP;
+            return rand(self::MIN,self::MAX);
         }
     }
 

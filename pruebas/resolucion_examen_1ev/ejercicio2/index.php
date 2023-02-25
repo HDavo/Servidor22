@@ -1,50 +1,12 @@
 <?php
-use ejercicio2\clases\ExamenChungo;
-use ejercicio2\clases\ExamenFacil;
-use ejercicio2\clases\ExamenHp;
     
-    /* spl_autoload_register( function ($class) {
-        $class = str_replace('\\', '/',$class);
-        echo '$class<br>';
-        require('./'.$class.'.php'); //importante adaptar esta ruta a el plantemiento de carpetas.
-        //al hacerlo de esta manera(con la estructura de carpetas usada, no es necesario poner también el nombre de la carpeta)
-    });  */ 
-    // require('./clases/ExamenFacil.php');
-    // require('./clases/ExamenHP.php');
-    // require('./clases/ExamenChungo.php');
-/* 
     spl_autoload_register(function ($class) {
-        $file = str_replace('\\', '/', $class);
-        echo("./${file}.php");
-        require('./$class.php');
+        $path = "./";
+        $file = str_replace("\\", "/", $class);
+        require("$path${file}.php");
     });
- */
-
-    spl_autoload_register(function ($class) {
-        $classPath = realpath("./");
-        $file = str_replace('\\','/', $class);
-        $include = "$classPath/${file}.php";
-        require($include);
-    });
-    //uso de examenFacil
-
-    $cosa1 = new ExamenFacil('Examen fácil');
-    echo $cosa1->obtenerNota();
-    $cosa1->setFecha('12/12/2022');
-
-    //uso de examen chungo
-    $cosa2 = new ExamenChungo('Ejemplo de examen chungo');
-    echo $cosa2->obtenerNota();
-    $cosa->setFecha('21/12/2022');
-
-
-    //uso de examen hp
-
-    $cosa4 = new ExamenHp('Ejemplo de examen imposible');
-    echo $cosa3->obtenerNota();
-    $cosa3->setFecha('12/03/2022');
 ?>
-
+   
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,6 +16,22 @@ use ejercicio2\clases\ExamenHp;
     <title>Prueba de objetos</title>
 </head>
 <body>
-    
+    <?php
+         //uso de examenFacil
+
+        $cosa1 = new Clases\ExamenFacil('Fácil');
+        echo "Nota del examen facil: ".$cosa1->obtenerNota();
+        // $cosa1->setFecha('12/12/2022');
+
+        //uso de examen chungo
+        $cosa2 = new Clases\ExamenChungo('Ejemplo de examen chungo');
+        echo "<br>Nota del examen chungo: ".$cosa2->obtenerNota();
+
+        //uso de examen hp
+
+        $cosa4 = new Clases\ExamenHp('Ejemplo de examen imposible');
+        echo "<br>Nota del examen HP: ".$cosa3->obtenerNota();
+
+    ?>
 </body>
 </html>
