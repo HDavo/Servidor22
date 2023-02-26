@@ -30,7 +30,7 @@
         echo "<table>";
         echo pintaCabecera("", "lunes", "martes", "miercoles", "jueves", "viernes");
         array_walk($horas, function ($valor, $llave) {
-            echo "$llave =>".pintaContenido(HORA_FIN." - ".HORA_FIN, "servidor", "cliente", "despliegue", "empresa", "servidor");
+            echo "$llave =>".pintaContenido(HORA_INI." - ".HORA_FIN, "servidor", "cliente", "despliegue", "empresa", "servidor");
         });
         echo pintaContenido(HORA_INI." - ".HORA_FIN, "servidor", "cliente", "despliegue", "empresa", "servidor");
         echo "</table>";
