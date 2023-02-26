@@ -1,0 +1,9 @@
+<ul>
+    {% for linea in lineas %}
+    <!-- Línea 5 – Marques de Vadillo + nueva incidencia -->
+    {% for estacion in linea.estacion_set.all %}
+    <li>{{ linea.nombre_linea }} - {{ estacion.nombre_estacion }} + <a href="{% url 'incidencias:incidencia' estacion.id %}">Nueva incidencia</a></li>
+    {% endfor %}
+    {% endfor %}
+    {% if mensaje_exito %}{{mensaje_exito}} {% endif %}
+</ul>
