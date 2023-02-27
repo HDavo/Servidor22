@@ -18,7 +18,6 @@
         else $errores['extras']="<span class='error'>*Debes seleccionar al menos una opión</span>";
 
 
-
         
 
         //mensaje GRACIAS
