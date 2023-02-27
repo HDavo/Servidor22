@@ -1,4 +1,4 @@
-foros/media/f_perfil
-geodjango/
-misitio/misitio/aplicacion/media
-misitio/misitio/local_settings.py
+django/foros/media/f_perfil
+django/geodjango/
+django/misitio/misitio/aplicacion/media
+django/misitio/misitio/local_settings.py

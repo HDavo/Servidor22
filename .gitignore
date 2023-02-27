@@ -1,7 +1,7 @@
 python/.vscode/
 python/tutorial_api_spo/.env
-python/tutorial_django/mysite/polls/serializer.py
-python/foros/foros/settings.py
-python/misitio/misitio/local_settings.py
-python/misitio/media/
+python/django/tutorial_django/mysite/polls/serializer.py
+python/django/foros/foros/settings.py
+python/django/misitio/misitio/local_settings.py
+python/django/misitio/media/
 pruebas/resolucion_examen_2ev/django/examen/examen/local_settings.py
