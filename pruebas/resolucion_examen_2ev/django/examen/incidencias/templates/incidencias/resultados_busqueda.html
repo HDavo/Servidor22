@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado búsqueda</title>
+</head>
+<body>
+    <p>Estás buscando incidencias: <strong>{{query}}</strong></p>
+    
+    {% if resultados %}
+        <p>Incidencias encontradas: {{resultados|length}} incidencias</p>
+        <ul>
+            {% for resultado in resultados %}
+            <li>
+                {{resultado.texto_incidencia}}
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay incidencias coincidentes con la búsqueda</p>
+    {% endif %}
+</body>
+</html>

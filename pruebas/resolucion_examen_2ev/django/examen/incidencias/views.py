@@ -40,3 +40,34 @@ def exito(request):
         'estaciones': Estacion.objects.all(),
         'mensaje_exito': '--- Su incidencia ha sido dada de alta ---'
     })
+    
+
+# para poner un campo de búsqueda, solamente lo muestra
+def busqueda_incidencias(request):
+    return render(request, "incidencias/busqueda_incidencias.html")
+
+
+#esta vista es la que realiza la búsqueda
+""" def buscar(request):
+    mensaje = "Incidencia buscada: %r" %request.GET["inci"] 
+    #se le pide la información del get del campo con ese identificador
+    return HttpResponse(mensaje)
+    # hasta aquí solo muestra el texto introducido, no busca dentro de la bbdd ni tiene filtros para el campo vacío
+ """
+
+ 
+def buscar(request):
+    if request.GET["inci"]:
+        # mensaje = "Incidencia buscada: %r" %request.GET["inci"] 
+        buscando = request.GET["inci"]
+        
+        resultados = Incidencia.objects.filter(texto_incidencia__contains= buscando)
+        #funciona como un like de sql
+        
+        # la ruta dentro de render es la que tenemos dentro de las templates, busca dentro de ellas
+        return render(request, 'incidencias/resultados_busqueda.html', {"incidencias":resultados, "query":buscando})
+        
+    else:
+        mensaje = "No has introducido ningún dato"
+        
+    return HttpResponse(mensaje)
