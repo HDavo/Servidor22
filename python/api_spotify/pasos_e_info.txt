@@ -1,0 +1,26 @@
+Primero descargar el servidor jupyter
+
+pip install jupyter-server
+
+
+Después instalar notebook
+
+pip install notebook
+
+
+
+
+Luego clonar las librerías del siguiente enlace:
+
+https://github.com/prodramp/publiccode/tree/master/machine_learning/spotify-projects
+
+
+
+Una vez instalados lanzar el servidor de jupyter y notebook dentro del directorio que contiene los ficheros.
+
+jupyter server
+jupyter notebook
+
+
+Dentro de jupyter y de notebook seleccionar el fichero de instalación y ejecutar el comando de instalación.
+

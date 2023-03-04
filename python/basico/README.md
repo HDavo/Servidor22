@@ -1,3 +1,5 @@
+Python siempre pasa las variables por referencia
+
 ## Concatenar
 
 Se usa + para concatenar
@@ -133,7 +135,7 @@ for i in range(12,45):
 ```
 
 ### for con lista y tuplas
-*Las listas se diferencian de las tuplas en que las tuplas no pueden modificarse.<br> -Listas: se usan cuando sea necesario modificar el número de elementos.<br> -Tuplas:Indicadas para usarse dentro de diccionarios o de sets.*
+*Las listas se diferencian de las tuplas en que las tuplas no pueden modificarse.<br> -Listas: (son el equivalente de los arrays pero pueden guardar dentro distintos tipos de variables y se extienden de forma dinámica) se usan cuando sea necesario modificar el número de elementos.<br> -Tuplas:Indicadas para usarse dentro de diccionarios o de sets.*
 
 Con lista
 ```
