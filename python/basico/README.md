@@ -1,5 +1,9 @@
 Python siempre pasa las variables por referencia
 
+Listas []
+tuplas ()
+diccionarios {}
+
 ## Concatenar
 
 Se usa + para concatenar

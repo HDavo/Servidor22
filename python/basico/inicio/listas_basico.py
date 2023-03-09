@@ -81,3 +81,9 @@ print(resultado)
 
 prueba = [2,2,4,8,8,8,8,8,5,5,5,8]*3
 print(prueba)
+
+
+#para convertir una tupla en una lista se usa el método tuple 
+""" cosa = ("Manolo", 24,5,189)
+cosalista = list(cosa)
+print(cosalista) """
