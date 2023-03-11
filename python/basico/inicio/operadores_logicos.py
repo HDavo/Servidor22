@@ -6,7 +6,7 @@ or
 in """
 
 #Ejemplo de and
-""" print("Bienvenido. Introduce los siguientes datos: ")
+print("Bienvenido. Introduce los siguientes datos: ")
 
 distancia = int(input("Introduce la distancia al trabajo en kilometros"))
 print(distancia)
@@ -23,7 +23,7 @@ elif distancia>30 and miembros>3 and salario<=25000:
     print("Tienes deerecho a la retención media.")
 elif distancia<30 and miembros<3 and salario>25000:
     print("No tienes derecho a ninguna deducción")
-     """
+    
     
 #Ejemplo de in usando una lista
 # también puede usarse para comparar con strings con los datos separados por comas
