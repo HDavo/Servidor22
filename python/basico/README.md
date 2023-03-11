@@ -6,7 +6,8 @@ diccionarios {}
 
 ## Concatenar
 
-Se usa + para concatenar
+Se usa + para concatenar. Tener en cuenta que Python es de tipado fuerte y no deja concatenar números y cadenas.
+Esto se puede solucionar poniendo + str(num)
 ```
 name = input("What is your name? ")
 
