@@ -27,5 +27,3 @@ class Incidencia(models.Model):
     def __str__(self):
         return f"{self.nombre_estacion} ({self.nombre_estacion.linea}) {self.texto_incidencia}"
     
-    
-    

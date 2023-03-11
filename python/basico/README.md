@@ -87,7 +87,11 @@ while i < 10:
 ```
 
 
-## Ejemplo de if
+
+## IF
+
+### Ejemplo de if 
+
 ```
 a = 2
 
@@ -98,7 +102,7 @@ if a!=0:
 	if a<0:
 		print(a, 'Es negativo.')
 ```
-## IF
+
 ### Ejemplo de if + else
 ```
 a = 2
