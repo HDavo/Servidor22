@@ -39,3 +39,35 @@ exam = range(21, 45, 3)
 for i in exam:
     print(i)
 
+# Continue
+    
+frase = "Pepe es una persona"
+
+contador = 0
+
+for i in frase:
+    if i==" ": # con continue cada vez que se encuentre un espacio, lo ignorará en ese ciclo y seguirá la ejecución hasta el final
+        continue
+    contador+=1
+
+print(contador)
+
+# Pass -> devuelve un null. Ante casos de clases y funciones que aún no se han completado y que permita ejecutar aunque estén sin completar.
+
+
+# else dentro de for.
+# En este caso else se ejecuta cuando el bucle principal está vacío, en caso de no poner el break se ejecuta siempre el else.
+
+correo = input("Introduce tu correo electrónico.\n")
+
+for i in correo:
+    if i=="@":
+        signo=True
+        print("Correo válido")
+        break
+
+else:
+    arroba=False
+    print("Correo no válido")
+    
+# print(signo)

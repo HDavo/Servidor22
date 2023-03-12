@@ -197,3 +197,13 @@ for x in range(5):
         print(x, end=' ')
     print()
 ```
+
+# Excepciones
+
+```
+try: 
+    código
+except + error: # sin poner el error es como capturar una excepción genérica
+    código
+    return
+```
