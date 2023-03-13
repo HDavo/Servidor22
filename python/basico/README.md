@@ -207,3 +207,36 @@ except + error: # sin poner el error es como capturar una excepción genérica
     código
     return
 ```
+
+# POO
+
+## Método constructor
+
+```
+def __init__(self): #el constructor tiene el mismo nombre en todas las clases, 
+       self.ancho = 200
+       self.largo = 300
+       self.ruedas = 4
+       # para encapsular un atributo self.__ruedas = 6
+       self.enMarcha = False
+
+       #si se encapsula un atributo o variable debemos referirnos a él con los dos guiones bajos
+```
+
+## Encapsulación de métodos
+Para llamarlos debe usarse el formato de la encapsulación
+
+```
+ def __comprobacion(self):
+        print("Comprobando cosas")
+        
+        self.gasolina = "OK"
+        self.aceite = "cosa"
+        self.puertas = "CERRADAS"
+        
+        if self.gasolina.upper=="OK" and self.aceite.upper == "OK" and self.puertas.upper == "CERRADAS":
+            return True
+        else:
+            return False
+        
+```
