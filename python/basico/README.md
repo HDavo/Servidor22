@@ -240,3 +240,9 @@ Para llamarlos debe usarse el formato de la encapsulación
             return False
         
 ```
+## Herencia 
+Para indicar que una clase hereda de otra se hace de la siguiente manera:
+```
+class Moto(Vehiculos):
+    pass        
+```
