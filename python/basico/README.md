@@ -246,3 +246,15 @@ Para indicar que una clase hereda de otra se hace de la siguiente manera:
 class Moto(Vehiculos):
     pass        
 ```
+
+### Herencia múltiple
+```
+class BiciElectrica(Vehiculos,VElectricos):
+# dentro del paréntesis se ponen las diferentes clases de las que hereda
+    pass
+
+""" 
+En el caso de usar herencia múltiple, la clase que se pasa en primer lugar dentro del paréntesis tiene prioridad a la hora de llamar a los diferentes métodos como el constructor. El resto se priorizan de izquierda a derecha.
+
+"""      
+```
