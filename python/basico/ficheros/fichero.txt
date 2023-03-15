@@ -1,0 +1,5 @@
+Hola Pepe,
+esto es una prueba de ficheros con Python.
+Más contenido para el fichero para probar readlines
+Contenido añadido con el modo de apertura append para evitar la sobreescritura del contenido previo.
+Línea añadida usando el modo de lectura y escritura
