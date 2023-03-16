@@ -5,3 +5,5 @@ python/django/foros/foros/settings.py
 python/django/misitio/misitio/local_settings.py
 python/django/misitio/media/
 pruebas/resolucion_examen_2ev/django/examen/examen/local_settings.py
+pruebas/resolucion_examen_2ev/django/examen/examen/local_settings.py
+pruebas/resolucion_examen_ordinaria/ejercicio3/registro_civil/registro_civil/local_settings.py

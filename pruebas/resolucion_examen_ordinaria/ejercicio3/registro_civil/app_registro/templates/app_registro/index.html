@@ -1,0 +1,38 @@
+{% comment %} <h1>Listado de personas</h1>
+{% if lista %}
+    <tr>
+        <th>Apellido pareja</th>
+        <th>Lugar</th>
+        <th>Fecha</th>
+    </tr>
+    <tr>
+        {% for pareja in lista %}
+            <td>
+                <a href="{% url 'app_registro:detail' pareja.id %}">{{ pareja. }}</a>
+            </td>
+        {% endfor %}
+    </tr>
+{% else %}
+    <p>No hay parejas</p>
+{% endif %}
+ {% endcomment %}
+
+ {% block content %}
+    <table border="1px">
+        <tr>
+            <th>Apellido pareja</th>
+            <th>Lugar</th>
+            <th>Fecha</th>
+        </tr>
+        {% for pareja in personas %}
+        <tr>   
+            <td>
+                <a href="{% url 'app_registro:detail' pareja.id %}">{{ pareja.integrante1.apellido1 }} </a>
+                <a href="{% url 'app_registro:detail' pareja.id %}">{{ pareja.integrante2.apellido1 }} </a>
+            </td>
+            <td>{{ pareja.lugar }}</td>
+            <td>{{ pareja.fecha }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+ {% endblock content %}  
