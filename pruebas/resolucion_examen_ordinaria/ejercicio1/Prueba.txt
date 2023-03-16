@@ -1,0 +1,4 @@
+Pepe;2023-03-01;Pepee11;Barroco;
+anabel;2023-03-02;LinuxEnjoyer;Neoclásico;
+anabel;2023-03-10;Linux;Neoclásico;
+Sujeto Final;2023-03-17;Flatiron;Barroco;
