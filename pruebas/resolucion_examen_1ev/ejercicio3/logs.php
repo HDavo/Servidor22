@@ -26,7 +26,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de acceso</title>
     <style>
-        <style>
         *,
         *::before,
         *::after {
@@ -36,13 +35,12 @@
         }
         .global {
             min-width: 100vw;
-            ming-height: 100vh;
+            min-height: 100vh;
         }
         .heading{background-color: lightgrey;}
         table{margin: 0 auto;}
         table, tr, td{border-collapse: collapse; border: 1px solid black;}
         td{padding: 15px;}
-    </style>
     </style>
 </head>
 <body>
