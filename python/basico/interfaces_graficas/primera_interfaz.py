@@ -39,6 +39,7 @@ raiz.config(bg="grey")
 
 
 
+
 raiz.mainloop() # siempre debe estar al final del código
 
 """ Para que la ventana o programa creado, se ejecuten solo como una ventana, es decir, sin abrir una terminal.
