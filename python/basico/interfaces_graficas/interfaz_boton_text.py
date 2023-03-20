@@ -5,65 +5,64 @@ raiz = Tk()
 
 raiz.title("Interfaz con entry")
 
-miFrame = Frame(raiz, width=940, height=720)
-miFrame.pack()
+mi_frame = Frame(raiz, width=940, height=720)
+mi_frame.pack()
 
 
 # añadido en este ejemplo
 
-minombre = StringVar() # definimos esta variable como tipo string
+mi_nombre = StringVar() # definimos esta variable como tipo string
 
-cuadroNombre = Entry(miFrame, textvariable=minombre) # textvariable asocia el cuadro de texto a la variable indicada
+cuadro_nombre = Entry(mi_frame, textvariable=mi_nombre) # textvariable asocia el cuadro de texto a la variable indicada
+cuadro_nombre.grid(row=0, column=1, padx=10, pady=10) # hace lo mismo que pack y adapta el tamaño del contenedor al contenido
+cuadro_nombre.config(fg="red", justify="right")
 
-cuadroNombre.grid(row=0, column=1, padx=10, pady=10) # hace lo mismo que pack y adapta el tamaño del contenedor al contenido
-cuadroNombre.config(fg="red", justify="right")
+cuadro_passwd = Entry(mi_frame)
+cuadro_passwd.grid(row=1, column=1, padx=10, pady=10)
+cuadro_passwd.config(show="*") # show hace que se cambien los caracteres escritos por el caracter elegido
 
-cuadroPasswd = Entry(miFrame)
-cuadroPasswd.grid(row=1, column=1, padx=10, pady=10)
-cuadroPasswd.config(show="*") # show hace que se cambien los caracteres escritos por el caracter elegido
+cuadro_apellido = Entry(mi_frame)
+cuadro_apellido.grid(row=2, column=1, padx=10, pady=10)
 
-cuadroApellido = Entry(miFrame)
-cuadroApellido.grid(row=2, column=1, padx=10, pady=10)
-
-cuadroDireccion = Entry(miFrame)
-cuadroDireccion.grid(row=3, column=1, padx=10, pady=10)
+cuadro_direccion = Entry(mi_frame)
+cuadro_direccion.grid(row=3, column=1, padx=10, pady=10)
 
 #a partir de aqui es lo añadido en este ejemplo
 
-cuadroComentario = Text(miFrame, width=20, height=8) # text tiene scroll por defecto, (funciona como un textarea) pero la barra debe agregarse de manera manual con un objeto de tipo scrollbar
-cuadroComentario.grid(row=4, column=1, padx=10, pady=10) 
+cuadro_comentario = Text(mi_frame, width=20, height=8) # text tiene scroll por defecto, (funciona como un textarea) pero la barra debe agregarse de manera manual con un objeto de tipo scrollbar
+cuadro_comentario.grid(row=4, column=1, padx=10, pady=10) 
 
 # además de crearla la barra, debemos colocarla para que salga en la posición deseada
-barraVertical = Scrollbar(miFrame, command=cuadroComentario.yview) # yview para que sea vertical
-barraVertical.grid(row=4, column=2, sticky="nsew")
-cuadroComentario.config(yscrollcommand=barraVertical.set) # con set indica la posicón en la que encontramos (en el caso de linux también hace que sirva para poner el contenido, sin ello no lo hacía)
+barra_vertical = Scrollbar(mi_frame, command=cuadro_comentario.yview) # yview para que sea vertical
+barra_vertical.grid(row=4, column=2, sticky="nsew")
+cuadro_comentario.config(yscrollcommand=barra_vertical.set) # con set indica la posicón en la que encontramos (en el caso de linux también hace que sirva para poner el contenido, sin ello no lo hacía)
 
 # por defecto el texto de los labels está alineado al centro para cambiarlo se debe hacer uso de la propiedad sticky.
 # Sticky establece las posiciones mediante el uso de los puntos cardinales. Admite los puntos intermedios (nw,se,ne,sw,nw)
 # padx (padding horizontal) // pady (padding vertical). Medido en píxeles.
 
-nombreLabel = Label(miFrame, text="Nombre: ")
-nombreLabel.grid(row=0, column=0, sticky="w", padx=10, pady=10)
+nombre_label = Label(mi_frame, text="Nombre: ")
+nombre_label.grid(row=0, column=0, sticky="w", padx=10, pady=10)
 
-passwdLabel = Label(miFrame, text="Contraseña: ")
-passwdLabel.grid(row=1, column=0, sticky="w", padx=10, pady=10)
+passwd_label = Label(mi_frame, text="Contraseña: ")
+passwd_label.grid(row=1, column=0, sticky="w", padx=10, pady=10)
 
-apellidoLabel = Label(miFrame, text="Apellido: ")
-apellidoLabel.grid(row=2, column=0, sticky="w", padx=10, pady=10)
+apellido_label = Label(mi_frame, text="Apellido: ")
+apellido_label.grid(row=2, column=0, sticky="w", padx=10, pady=10)
 
-direccionLabel = Label(miFrame, text="Dirección: ")
-direccionLabel.grid(row=3, column=0, sticky="w", padx=10, pady=10)
+direccion_label = Label(mi_frame, text="Dirección: ")
+direccion_label.grid(row=3, column=0, sticky="w", padx=10, pady=10)
 
 
 # desde aqui agreado en este ejemplo
-comentariosLabel = Label(miFrame, text="Comentarios: ")
-comentariosLabel.grid(row=4, column=0, sticky="w", padx=10, pady=10)
+comentarios_label = Label(mi_frame, text="Comentarios: ")
+comentarios_label.grid(row=4, column=0, sticky="w", padx=10, pady=10)
 
 
-def codigoBoton():
-    minombre.set("Pepe")
+def codigo_boton():
+    mi_nombre.set("Pepe")
 
-botonEnviar = Button(raiz, text="Enviar", command=codigoBoton) # command es lo que hace que el botón ejecute una acción
-botonEnviar.pack()
+boton_enviar = Button(raiz, text="Enviar", command=codigo_boton) # command es lo que hace que el botón ejecute una acción
+boton_enviar.pack()
 
 raiz.mainloop()

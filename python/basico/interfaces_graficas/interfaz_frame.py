@@ -16,30 +16,30 @@ raiz.iconphoto(False, tk.PhotoImage(file="python/basico/interfaces_graficas/img/
 
 raiz.config(bg="grey")
 
-miFrame = Frame()
+mi_frame = Frame()
 
-# miFrame.pack(side="left", anchor="n") # con side y anchor se establece la posición del frame
+# mi_frame.pack(side="left", anchor="n") # con side y anchor se establece la posición del frame
 
 # para rellenar con el frame
-# miFrame.pack(fill="x") # para rellenar de manera horizontal
-miFrame.pack(fill="y", expand=True) # para rellenar/expandir de manera vertical
+# mi_frame.pack(fill="x") # para rellenar de manera horizontal
+mi_frame.pack(fill="y", expand=True) # para rellenar/expandir de manera vertical
 
-# miFrame.pack(fill="both", expand=True) # para expandir en varias direcciones
+# mi_frame.pack(fill="both", expand=True) # para expandir en varias direcciones
 
 
 # las modificaciones hechas con config son también aplicables a la raiz
 # para añadir marcos al frame
-miFrame.config(bd=10)
-miFrame.config(relief="groove")
+mi_frame.config(bd=10)
+mi_frame.config(relief="groove")
 
 # para cambiar el icono del ratón dentro del frame
-miFrame.config(cursor="pirate")
+mi_frame.config(cursor="pirate")
 
-miFrame.config(bg="red")
+mi_frame.config(bg="red")
 
 # una vez se tiene un frame el tamaño mínimo y por defecto de la ventana viene marcado por el frame y no es necesario ponerle un tamaño. Al ampliar se pueden diferenciar el frame y el contenedor
 
-miFrame.config(width="320", height="320")
+mi_frame.config(width="320", height="320")
 
 
 raiz.mainloop() # siempre debe estar al final del código
