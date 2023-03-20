@@ -1,11 +1,10 @@
-# funcionalidad de números sin usar lambda
+# funcionalidad de números sin usar lambda, solo con números enteros
 
 from tkinter import *
 
 raiz = Tk()
 
 mi_frame=Frame(raiz)
-
 mi_frame.pack()
 
 # ******* Apartado de funcionalidad ******
@@ -20,7 +19,6 @@ def numero_pulsado(num):
     
     if operacion!="": # al pulsar el botón suma deja de concatenar y escribe el número desde cero
         numero_pantalla.set(num)
-        
         operacion="" # asi hacemos que pueda concatenar las cifras del segundo número introducido
     else:
         numero_pantalla.set(numero_pantalla.get() + num)
@@ -32,17 +30,35 @@ def suma(num): # num es lo que hay en pantalla al pulsar sobre la operación
     global operacion
     
     global resultado
-    
     resultado +=int(num)
     
     operacion = "suma"
     
     numero_pantalla.set(resultado)
     
+# *******Función resta******
+def resta(num):
     
-def dar_resultado():
-    pass
+    global operacion
+    
+    global resultado
+    
+    resultado -=int(num)
+    
+    operacion = "resta"
+    
+    numero_pantalla.set(resultado)
+    
+# *******Función resultado final******
 
+def dar_resultado():
+    global resultado
+    numero_pantalla.set(resultado+int(numero_pantalla.get()))
+    # después de dar un resultado debemos poner el resultado a 0.
+    resultado=0
+
+
+    
 # *******Creación de la pantalla******
 pantalla = Entry(mi_frame, textvariable=numero_pantalla)
 pantalla.grid(row=1, column=1, padx=10, pady=10, columnspan=4)
@@ -80,7 +96,7 @@ boton_2 = Button(mi_frame, text="2", width=3, command=lambda:numero_pulsado("2")
 boton_2.grid(row=4, column=2)
 boton_3 = Button(mi_frame, text="3", width=3, command=lambda:numero_pulsado("3"))
 boton_3.grid(row=4, column=3)
-boton_resta = Button(mi_frame, text="-", width=3)
+boton_resta = Button(mi_frame, text="-", width=3, command=lambda:resta(numero_pantalla.get()))
 boton_resta.grid(row=4, column=4)
 
 
@@ -90,7 +106,7 @@ boton_0 = Button(mi_frame, text="0", width=3, command=lambda:numero_pulsado("0")
 boton_0.grid(row=5, column=1)
 boton_coma = Button(mi_frame, text=",", width=3, command=lambda:numero_pulsado(","))
 boton_coma.grid(row=5, column=2)
-boton_igual = Button(mi_frame, text="=", width=3)
+boton_igual = Button(mi_frame, text="=", width=3, command=lambda:dar_resultado())
 boton_igual.grid(row=5, column=3)
 boton_suma = Button(mi_frame, text="+", width=3, command=lambda:suma(numero_pantalla.get()))
 boton_suma.grid(row=5, column=4)
