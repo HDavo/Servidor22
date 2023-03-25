@@ -50,14 +50,14 @@ barra_menu.add_cascade(label="Ayuda", menu=menu_ayuda)
 
 #---------------------Comienzo de los campos-----------------------------------
 
-# variables que vamos a usar
+# variables que vamos a usar para los distintos campos
 
 variable_id = IntVar()
 variable_nombre = StringVar()
 variable_passwd = StringVar()
 variable_apellido = StringVar()
 variable_direccion = StringVar()
-variable_comentarios = StringVar()
+# se debe hacer para los de tipo entry, por eso no se pone una variable para los comentarios
 
 # definición del primer frame (contiene los labels y los diferentes inputs)
 mi_frame = Frame(raiz, width=720, height=410)
