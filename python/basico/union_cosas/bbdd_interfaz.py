@@ -29,6 +29,9 @@ def conexion_bbdd():
     except:
         return messagebox.showwarning("¡Atención!", "La BDDD ya existe")
     
+    
+    
+"""     
 def crear():
     mi_conexion = sqlite3.connect("usuarios")
     
@@ -41,4 +44,4 @@ def crear():
     
     
     messagebox.showinfo("BBDD", "Registro insertado con éxito")
-    # mi_cursor.executemany("INSERT INTO productos VALUES (?,?,?,?)", productos) 
+    # mi_cursor.executemany("INSERT INTO productos VALUES (?,?,?,?)", productos)  """

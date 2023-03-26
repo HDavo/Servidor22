@@ -6,7 +6,8 @@ import sqlite3
 #---------------------Funcionalidad-----------------------------------
 # mirar si es posible ponerlo dentro de otro fichero sin que ocurra una importación circular
 
-#---------------------Conexión BBDD-----------------------------------
+#---------------------Operaciones BBDD-----------------------------------
+
 def conexion_bbdd():
     # mi_conexion = sqlite3.connect("./python/basico/union_cosas/usuarios") 
     """  esta línea funciona en el ordenador principal pero no dentro de la máquina.
@@ -31,10 +32,11 @@ def conexion_bbdd():
         return messagebox.showinfo("BBDD", "BBDD creada con éxito")
     except:
         return messagebox.showwarning("¡Atención!", "La BDDD ya existe")
-    
+
 #Función para crear registros dentro de la bbdd
     
 def crear():
+
     mi_conexion = sqlite3.connect("usuarios")
     
     mi_cursor=mi_conexion.cursor()
@@ -65,7 +67,87 @@ def crear():
     messagebox.showinfo("BBDD", "Registro insertado con éxito")
     # mi_cursor.executemany("INSERT INTO productos VALUES (?,?,?,?)", productos) 
     
+    
+# función para poder recuperar los datos y rellenar con la información recogida los diferentes inputs
 
+def lectura_informacion():
+    
+    mi_conexion = sqlite3.connect("usuarios")
+
+    mi_cursor=mi_conexion.cursor()
+    
+    # mi_cursor.execute("SELECT * FROM datos_usuarios WHERE id=?", variable_id.get())
+    mi_cursor.execute("SELECT * FROM datos_usuarios WHERE id=" + str(variable_id.get())) # sin str da error por tipo de variable no concatenable, al tratarlo como un int
+    
+    usuario_obtenido = mi_cursor.fetchall()
+    
+    for usuario in usuario_obtenido:
+        variable_id.set(usuario[0])
+        variable_nombre.set(usuario[1])
+        variable_passwd.set(usuario[2])
+        variable_apellido.set(usuario[3])
+        variable_direccion.set(usuario[4])
+        cuadro_comentarios.insert(1.0, usuario[5])
+    
+    mi_conexion.commit()
+        
+        
+# Función para poder usar las funciones de update de la interfaz
+
+def actualizar_registro():
+    mi_conexion = sqlite3.connect("usuarios")
+    
+    mi_cursor=mi_conexion.cursor()
+    
+    # intentar parametrizar la consulta, de momento da error
+    """ datos = [
+        variable_nombre.get(),
+        variable_passwd.get(),
+        variable_apellido.get(),
+        variable_direccion.get(),
+        cuadro_comentarios.get("1.0", END),
+        variable_id.get()
+    ]
+    
+    consulta = "UPDATE datos_usuarios set nombre_usuario=%s, passwd=%s, apellido=%s, direccion=%s, comentarios=%s WHERE id=%s"
+    
+    mi_cursor.executemany(consulta, datos) """
+    
+    datos = str(variable_nombre.get()),str(variable_passwd.get()),str(variable_apellido.get()),str(variable_direccion.get()),str(cuadro_comentarios.get("1.0", END))
+    
+    """ 
+    mi_cursor.execute("UPDATE datos_usuarios SET nombre_usuario='" + str(variable_nombre.get()) +
+        "', passwd='" + str(variable_passwd.get()) +
+        "', apellido='" + str(variable_apellido.get()) +
+        "', direccion='" + str(variable_direccion.get()) +
+        "', comentarios='" + str(cuadro_comentarios.get("1.0", END)) +
+        "' WHERE id=" + str(variable_id.get()))
+    """
+    
+    mi_cursor.execute("UPDATE datos_usuarios SET nombre_usuario=?,passwd=?, apellido=?, direccion=?, comentarios=? "+
+    "WHERE id=" + str(variable_id.get()), (datos)                      
+    )
+    
+    mi_conexion.commit()
+    
+    messagebox.showinfo("BBDD", "Registro actualizado con éxito")
+    # mi_cursor.executemany("INSERT INTO productos VALUES (?,?,?,?)", productos) 
+    
+# Función para poder borrar registros de la bbdd usando los botones correspondientes
+    
+def eliminar_registro():
+    
+    mi_conexion = sqlite3.connect("usuarios")
+    
+    mi_cursor=mi_conexion.cursor()
+    
+    mi_cursor.execute("DELETE FROM datos_usuarios WHERE id=" + str(variable_id.get()))
+    
+    mi_conexion.commit()
+    
+    messagebox.showinfo("BBDD", "Registro borrado con éxito")
+
+#---------------------Funciones (no BBDD)-----------------------------------
 # Función para hacer funcionar la opción salir del menú
 
 def salir_aplicacion():
@@ -111,9 +193,9 @@ menu_borrar.add_command(label="Borrar campos", command=limpieza_campos)
 
 menu_crud = Menu(barra_menu, tearoff=0)
 menu_crud.add_command(label="Crear", command=crear)
-menu_crud.add_command(label="Leer")
-menu_crud.add_command(label="Actualizar")
-menu_crud.add_command(label="Borrar")
+menu_crud.add_command(label="Leer", command=lectura_informacion)
+menu_crud.add_command(label="Actualizar", command=actualizar_registro)
+menu_crud.add_command(label="Borrar", command=eliminar_registro)
 
 menu_ayuda = Menu(barra_menu, tearoff=0)
 menu_ayuda.add_command(label="Licencia")
@@ -198,13 +280,13 @@ otro_frame.pack()
 boton_create = Button(otro_frame, text="Create", command=crear)
 boton_create.grid(row=0, column=0, sticky="e", padx=10, pady=10)
 
-boton_read = Button(otro_frame, text="Read")
+boton_read = Button(otro_frame, text="Read", command=lectura_informacion)
 boton_read.grid(row=0, column=1, sticky="e", padx=10, pady=10)
 
-boton_update = Button(otro_frame, text="Update")
+boton_update = Button(otro_frame, text="Update", command=actualizar_registro)
 boton_update.grid(row=0, column=2, sticky="e", padx=10, pady=10)
 
-boton_delete = Button(otro_frame, text="Delete")
+boton_delete = Button(otro_frame, text="Delete", command=eliminar_registro)
 boton_delete.grid(row=0, column=3, sticky="e", padx=10, pady=10)
 
 raiz.mainloop()
