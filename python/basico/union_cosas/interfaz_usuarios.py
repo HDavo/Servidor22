@@ -32,27 +32,51 @@ def conexion_bbdd():
     except:
         return messagebox.showwarning("¡Atención!", "La BDDD ya existe")
     
+#Función para crear registros dentro de la bbdd
+    
 def crear():
     mi_conexion = sqlite3.connect("usuarios")
     
     mi_cursor=mi_conexion.cursor()
     
-    # mi_cursor.executemany("INSERT INTO datos_usuarios VALUES (null,?,?,?,?,?)", variable_nombre.get(), variable_passwd.get(), variable_apellido.get(), variable_direccion.get(), cuadro_comentarios.get("1.0", END)) #esta linea no funciona de esta manera
+    datos = [
+        variable_nombre.get(),
+        variable_passwd.get(),
+        variable_apellido.get(),
+        variable_direccion.get(),
+        cuadro_comentarios.get("1.0", END)
+    ]
+    
+    mi_cursor.execute(
+        """
+        INSERT INTO datos_usuarios(
+            nombre_usuario,
+            passwd,
+            apellido,
+            direccion,
+            comentarios
+        )VALUES(?,?,?,?,?)
+        """, datos
+    )
+    
     
     mi_conexion.commit()
     
-    
     messagebox.showinfo("BBDD", "Registro insertado con éxito")
     # mi_cursor.executemany("INSERT INTO productos VALUES (?,?,?,?)", productos) 
+    
+
+# Función para hacer funcionar la opción salir del menú
 
 def salir_aplicacion():
     valor = messagebox.askquestion("Salir", "¿Deseas salir de la aplicación?")
      
     if valor == "yes":
-       raiz.destroy() # de momento dentro del mismo archivo porque necesita raiz
+       raiz.destroy() # de momento dentro del mismo archivo porque necesita raiz y se incurre en importación circular
        
        
-       
+    
+# Función para borrar los campos. Dar funcionalidad a la función borrar campos del menú Borrar
 def limpieza_campos():
     # para los entry se puede hacer de esta manera (siempre se debe aplicar set sobre la variable definida NUNCA SOBRE EL CAMPO)
     variable_id.set("")
