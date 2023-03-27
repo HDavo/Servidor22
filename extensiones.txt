@@ -1,3 +1,38 @@
+activitus bar 
+angular
+Angular Snippets
+angular2-inline
+auto close tag
+blackbox
+bookmarks
+color highlight
+java pack
+dracula at night
+git graph
+git lens
+intellicode
+isort
+jupyter
+jupyter notebook renderers
+jupyter cell tags
+jupyter keymap
+jupyter notebook
+live server
+material icon theme
+php debug
+php setters y getters
+php inteliphense
+pylance
+python
+todo highlight
+todo tree
+TypeScript Importer
+composer
+prettier
+php
+indent rainbow
+color indent (esta no sale)
+python indent
 autoDocstring - python
 color Picker
 django
