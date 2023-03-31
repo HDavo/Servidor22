@@ -41,3 +41,4 @@ jinja
 php profiler
 sqlite viewer
 markdown editor
+vscode-angular-inline 
