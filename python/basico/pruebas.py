@@ -3,6 +3,11 @@
 # for x in cosas:
 #     print(x)
     
+"""
+Ejemplo de que se puede incluir documentación en un módulo y al acceder al módulo podemos ver la documentación.
+Introducido en la parte de documentación.
+"""
+
 
 
 miscosas = {'perro':'python',
