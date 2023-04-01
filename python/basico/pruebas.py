@@ -10,19 +10,19 @@ Introducido en la parte de documentación.
 
 
 
-miscosas = {'perro':'python',
+mis_cosas = {'perro':'python',
             'raza':'mestizo', 
             'color':'varios'
 }
 
-for x in miscosas:
-	print(x, ':', miscosas[x])
+for x in mis_cosas:
+	print(x, ':', mis_cosas[x])
  
  
  
-otracosa = {'ramon', 'pepe', 'paco'}
+otras_cosas = {'ramon', 'pepe', 'paco'}
 
-for x in otracosa:
+for x in otras_cosas:
 	print(x)
  
  
